@@ -1,0 +1,5633 @@
+object frmColaboradores: TfrmColaboradores
+  Left = 388
+  Height = 668
+  Top = 125
+  Width = 1283
+  Align = alClient
+  BorderStyle = bsDialog
+  Caption = 'Colaboradores'
+  ClientHeight = 668
+  ClientWidth = 1283
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '2.0.8.0'
+  object ToolBar1: TToolBar
+    Left = 0
+    Height = 64
+    Top = 0
+    Width = 1283
+    ButtonHeight = 55
+    ButtonWidth = 85
+    Caption = 'ToolBar1'
+    Color = clMenu
+    EdgeBorders = [ebLeft, ebTop, ebRight, ebBottom]
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Segoe UI'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Images = DM.ImageDM
+    ImagesWidth = 30
+    ParentColor = False
+    ParentFont = False
+    ShowCaptions = True
+    TabOrder = 0
+    object tbGravar: TToolButton
+      Left = 189
+      Hint = 'Gravar um registro'
+      Top = 2
+      Caption = 'Gravar'
+      ImageIndex = 8
+      OnClick = tbGravarClick
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object tbApagar: TToolButton
+      Left = 375
+      Hint = 'Apagar um registro'
+      Top = 2
+      Caption = 'Apagar'
+      ImageIndex = 6
+      OnClick = tbApagarClick
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object tbAnterior: TToolButton
+      Left = 561
+      Hint = 'Ir para o registro anterior'
+      Top = 2
+      Caption = 'Registro Anterior'
+      ImageIndex = 2
+      OnClick = tbAnteriorClick
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object tbFechar: TToolButton
+      Left = 813
+      Hint = 'Fechar a janela'
+      Top = 2
+      Caption = 'Fechar'
+      ImageIndex = 0
+      OnClick = tbFecharClick
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object tbModificar: TToolButton
+      Left = 96
+      Hint = 'modificar um registro'
+      Top = 2
+      Caption = 'Modificar'
+      ImageIndex = 9
+      OnClick = tbModificarClick
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object tbCancelar: TToolButton
+      Left = 282
+      Hint = 'Cancelar inclusão do registro'
+      Top = 2
+      Caption = 'Cancelar'
+      ImageIndex = 5
+      OnClick = tbCancelarClick
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object tbBuscar: TToolButton
+      Left = 468
+      Hint = 'Procurar um registro'
+      Top = 2
+      Caption = 'Buscar'
+      ImageIndex = 10
+      OnClick = TBBuscarClick
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object tbProximo: TToolButton
+      Left = 686
+      Hint = 'Ir para o próximo registro'
+      Top = 2
+      Caption = 'Próximo Registro'
+      ImageIndex = 1
+      OnClick = tbProximoClick
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object ToolButton1: TToolButton
+      Left = 88
+      Height = 55
+      Top = 2
+      Caption = 'ToolButton1'
+      Style = tbsSeparator
+    end
+    object ToolButton2: TToolButton
+      Left = 181
+      Height = 55
+      Top = 2
+      Caption = 'ToolButton2'
+      Style = tbsSeparator
+    end
+    object ToolButton3: TToolButton
+      Left = 274
+      Height = 55
+      Top = 2
+      Caption = 'ToolButton3'
+      Style = tbsSeparator
+    end
+    object ToolButton4: TToolButton
+      Left = 367
+      Height = 55
+      Top = 2
+      Caption = 'ToolButton4'
+      Style = tbsSeparator
+    end
+    object ToolButton5: TToolButton
+      Left = 460
+      Height = 55
+      Top = 2
+      Caption = 'ToolButton5'
+      Style = tbsSeparator
+    end
+    object ToolButton6: TToolButton
+      Left = 553
+      Height = 55
+      Top = 2
+      Caption = 'ToolButton6'
+      Style = tbsSeparator
+    end
+    object ToolButton7: TToolButton
+      Left = 678
+      Height = 55
+      Top = 2
+      Caption = 'ToolButton7'
+      Style = tbsSeparator
+    end
+    object ToolButton8: TToolButton
+      Left = 805
+      Height = 55
+      Top = 2
+      Caption = 'ToolButton8'
+      Style = tbsSeparator
+    end
+    object tbIncluir: TToolButton
+      Left = 3
+      Hint = 'Incluir um novo registro'
+      Top = 2
+      Caption = 'Incluir'
+      ImageIndex = 13
+      OnClick = TBIncluirClick
+      ParentShowHint = False
+      ShowHint = True
+    end
+  end
+  object Button1: TButton
+    Left = 349
+    Height = 31
+    Top = 472
+    Width = 75
+    Caption = 'Sair'
+    TabOrder = 1
+  end
+  object pgPrincipal: TPageControl
+    Left = 0
+    Height = 604
+    Top = 64
+    Width = 1283
+    ActivePage = tsDados
+    Align = alClient
+    Images = DM.ImageDM
+    ImagesWidth = 26
+    TabIndex = 0
+    TabOrder = 2
+    object tsDados: TTabSheet
+      Caption = 'Dados'
+      ClientHeight = 568
+      ClientWidth = 1279
+      ImageIndex = 12
+      object pgSecundaria: TPageControl
+        Left = 0
+        Height = 566
+        Top = 0
+        Width = 1270
+        ActivePage = tsEndereco
+        Align = alCustom
+        TabIndex = 1
+        TabOrder = 0
+        object tsIdentificacao: TTabSheet
+          Caption = 'Identificação'
+          ClientHeight = 537
+          ClientWidth = 1266
+          object Panel1: TPanel
+            Left = 0
+            Height = 149
+            Top = 3
+            Width = 800
+            ClientHeight = 149
+            ClientWidth = 800
+            TabOrder = 0
+            object Label1: TLabel
+              Left = 96
+              Height = 19
+              Top = 4
+              Width = 35
+              Caption = 'CPF*'
+              ParentColor = False
+            end
+            object Label2: TLabel
+              Left = 641
+              Height = 19
+              Top = 4
+              Width = 42
+              Caption = 'Status'
+              ParentColor = False
+            end
+            object Label4: TLabel
+              Left = 216
+              Height = 19
+              Top = 4
+              Width = 47
+              Caption = 'Nome*'
+              ParentColor = False
+            end
+            object Label5: TLabel
+              Left = 8
+              Height = 19
+              Top = 55
+              Width = 72
+              Caption = 'Data Nasc.'
+              ParentColor = False
+            end
+            object Label7: TLabel
+              Left = 271
+              Height = 19
+              Top = 55
+              Width = 63
+              Caption = 'Data Exp.'
+              ParentColor = False
+            end
+            object Label8: TLabel
+              Left = 8
+              Height = 19
+              Top = 0
+              Width = 46
+              Caption = 'Código'
+              ParentColor = False
+            end
+            object Label9: TLabel
+              Left = 553
+              Height = 19
+              Top = 55
+              Width = 58
+              Caption = 'Celular 1'
+              ParentColor = False
+            end
+            object Label10: TLabel
+              Left = 662
+              Height = 19
+              Top = 55
+              Width = 59
+              Caption = 'Celular 2'
+              ParentColor = False
+            end
+            object dbeCPF: TDBEdit
+              Left = 96
+              Height = 29
+              Top = 24
+              Width = 112
+              DataField = 'ENT_CNPJ_CPF'
+              DataSource = dsDadosEntidades
+              CharCase = ecNormal
+              MaxLength = 0
+              TabOrder = 0
+              OnExit = dbeCPFExit
+              OnKeyPress = dbeCPFKeyPress
+            end
+            object dbeNome: TDBEdit
+              Left = 216
+              Height = 29
+              Top = 23
+              Width = 415
+              DataField = 'ENT_NOME'
+              DataSource = dsDadosEntidades
+              CharCase = ecUppercase
+              MaxLength = 0
+              TabOrder = 1
+            end
+            object dbeCodigo: TDBEdit
+              Left = 8
+              Height = 29
+              Top = 23
+              Width = 81
+              DataField = 'ENT_COD'
+              DataSource = dsDadosEntidades
+              ReadOnly = True
+              Alignment = taRightJustify
+              CharCase = ecNormal
+              Color = clSilver
+              MaxLength = 0
+              TabOrder = 3
+            end
+            object Label12: TLabel
+              Left = 408
+              Height = 19
+              Top = 55
+              Width = 50
+              Caption = 'UF Exp.'
+              ParentColor = False
+            end
+            object Label13: TLabel
+              Left = 474
+              Height = 19
+              Top = 55
+              Width = 72
+              Caption = 'Orgão Exp.'
+              ParentColor = False
+            end
+            object dbeOrgao: TDBEdit
+              Left = 474
+              Height = 29
+              Top = 73
+              Width = 73
+              DataField = 'ENT_ORGAO'
+              DataSource = dsDadosEntidades
+              CharCase = ecUppercase
+              MaxLength = 0
+              TabOrder = 7
+            end
+            object dbeCelular1: TDBEdit
+              Left = 553
+              Height = 29
+              Top = 73
+              Width = 104
+              DataField = 'ENT_CELULAR'
+              DataSource = dsDadosEntidades
+              CharCase = ecNormal
+              MaxLength = 0
+              TabOrder = 8
+            end
+            object dbeCelular2: TDBEdit
+              Left = 662
+              Height = 29
+              Top = 73
+              Width = 116
+              DataField = 'ENT_CELULAR2'
+              DataSource = dsDadosEntidades
+              CharCase = ecNormal
+              MaxLength = 0
+              TabOrder = 9
+              OnChange = dbeCelular2Change
+            end
+            object dbeDataExp: TDBDateEdit
+              Left = 271
+              Height = 29
+              Top = 73
+              Width = 128
+              CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+              DateOrder = doNone
+              ButtonWidth = 23
+              NumGlyphs = 1
+              MaxLength = 0
+              OnChange = dbeDataExpChange
+              TabOrder = 4
+              DataField = 'ENT_DT_CAD'
+              DataSource = dsDadosEntidades
+            end
+            object dbeDataNasc: TDBDateEdit
+              Left = 8
+              Height = 29
+              Top = 72
+              Width = 128
+              CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+              DateOrder = doNone
+              ButtonWidth = 23
+              NumGlyphs = 1
+              MaxLength = 0
+              OnChange = dbeDataNascChange
+              TabOrder = 5
+              DataField = 'ENT_DATA_NASC'
+              DataSource = dsDadosEntidades
+            end
+            object DBLookupComboBox2: TDBLookupComboBox
+              Left = 408
+              Height = 31
+              Top = 73
+              Width = 57
+              CharCase = ecUppercase
+              DataField = 'ID_UF_EXP'
+              DataSource = dsDadosEntidades
+              Enabled = False
+              KeyField = 'UF_COD'
+              ListField = 'UF_REDUZIDO'
+              ListFieldIndex = 0
+              ListSource = dsExpedicao
+              LookupCache = False
+              Style = csDropDownList
+              TabOrder = 6
+            end
+            object DBLookupComboBox9: TDBLookupComboBox
+              Left = 641
+              Height = 31
+              Top = 23
+              Width = 137
+              DataField = 'RC_SITUACAO'
+              DataSource = dsDadosRHColab
+              KeyField = 'ID'
+              ListField = 'STATUS'
+              ListFieldIndex = 0
+              ListSource = dsStatus
+              LookupCache = False
+              Style = csDropDownList
+              TabOrder = 2
+            end
+            object DBEdit1: TDBEdit
+              Left = 143
+              Height = 29
+              Top = 73
+              Width = 118
+              DataField = 'ENT_INSC_MUNICIPAL_RG'
+              DataSource = dsDadosEntidades
+              CharCase = ecNormal
+              MaxLength = 0
+              TabOrder = 10
+            end
+            object Label22: TLabel
+              Left = 143
+              Height = 19
+              Top = 55
+              Width = 20
+              Caption = 'RG'
+              ParentColor = False
+            end
+            object DBLookupComboBox3: TDBLookupComboBox
+              Left = 251
+              Height = 29
+              Top = 120
+              Width = 272
+              DataField = 'RCC_DEPARTAMENTO'
+              DataSource = dsDadosRHColab
+              ListFieldIndex = 0
+              LookupCache = False
+              TabOrder = 11
+            end
+            object DBLookupComboBox6: TDBLookupComboBox
+              Left = 530
+              Height = 29
+              Top = 120
+              Width = 248
+              DataField = 'RCC_CARGO'
+              DataSource = dsDadosRHColab
+              ListFieldIndex = 0
+              LookupCache = False
+              TabOrder = 12
+            end
+            object DBLookupComboBox7: TDBLookupComboBox
+              Left = 8
+              Height = 29
+              Top = 120
+              Width = 238
+              DataField = 'PAR_COD'
+              DataSource = dsDadosEntidades
+              KeyField = 'PAR_COD'
+              ListField = 'PAR_FANTASIA'
+              ListFieldIndex = 0
+              ListSource = dsFilial
+              LookupCache = False
+              TabOrder = 13
+            end
+            object Label19: TLabel
+              Left = 251
+              Height = 19
+              Top = 102
+              Width = 96
+              Caption = 'Departamento'
+              ParentColor = False
+            end
+            object Label20: TLabel
+              Left = 530
+              Height = 19
+              Top = 104
+              Width = 40
+              Caption = 'Cargo'
+              ParentColor = False
+            end
+            object Label21: TLabel
+              Left = 8
+              Height = 19
+              Top = 102
+              Width = 33
+              Caption = 'Filial'
+              ParentColor = False
+            end
+          end
+          object Panel7: TPanel
+            Left = 817
+            Height = 537
+            Top = 0
+            Width = 449
+            Align = alRight
+            ClientHeight = 537
+            ClientWidth = 449
+            TabOrder = 1
+            object Label14: TLabel
+              Left = 8
+              Height = 19
+              Top = -1
+              Width = 83
+              Caption = 'Nome Social'
+              ParentColor = False
+            end
+            object DBEdit6: TDBEdit
+              Left = 8
+              Height = 29
+              Top = 19
+              Width = 439
+              DataField = 'RC_NOME_SOCIAL'
+              DataSource = dsDadosRHColab
+              CharCase = ecNormal
+              MaxLength = 0
+              TabOrder = 0
+            end
+            object Panel9: TPanel
+              Left = 1
+              Height = 32
+              Top = 504
+              Width = 447
+              Align = alBottom
+              ClientHeight = 32
+              ClientWidth = 447
+              TabOrder = 1
+              object btnAnterioar: TButton
+                Left = 8
+                Height = 25
+                Hint = 'Voltar uma Foto'
+                Top = 2
+                Width = 48
+                Caption = '<'
+                OnClick = btnAnterioarClick
+                ParentShowHint = False
+                ShowHint = True
+                TabOrder = 0
+              end
+              object btnProximo: TButton
+                Left = 62
+                Height = 25
+                Hint = 'Avançar uma foto'
+                Top = 2
+                Width = 51
+                Caption = '>'
+                OnClick = btnProximoClick
+                ParentShowHint = False
+                ShowHint = True
+                TabOrder = 1
+              end
+              object btnApagarFoto: TButton
+                Left = 366
+                Height = 25
+                Hint = 'Apagar a foto do colaborador'
+                Top = 2
+                Width = 75
+                Caption = 'Apagar'
+                OnClick = btnApagarFotoClick
+                ParentShowHint = False
+                ShowHint = True
+                TabOrder = 2
+              end
+              object btnAdicionar: TButton
+                Left = 250
+                Height = 25
+                Hint = 'Insira uma foto do colaborador'
+                Top = 2
+                Width = 113
+                Caption = 'Adicionar Foto'
+                OnClick = btnAdicionarClick
+                ParentShowHint = False
+                ShowHint = True
+                TabOrder = 3
+              end
+              object Button2: TButton
+                Left = 172
+                Height = 25
+                Top = 2
+                Width = 75
+                Caption = 'Tirar Foto'
+                OnClick = Button2Click
+                TabOrder = 4
+              end
+            end
+            object lbContagemFotos: TLabel
+              Left = 208
+              Height = 19
+              Top = 448
+              Width = 56
+              Caption = '0 de 0'
+              Font.CharSet = ANSI_CHARSET
+              Font.Color = clBlack
+              Font.Height = -16
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              Font.Style = [fsBold]
+              ParentColor = False
+              ParentFont = False
+            end
+            object Label49: TLabel
+              Left = 8
+              Height = 19
+              Top = 448
+              Width = 200
+              Caption = 'Quantidade de Fotos: '
+              Font.CharSet = ANSI_CHARSET
+              Font.Color = clBlack
+              Font.Height = -16
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              Font.Style = [fsBold]
+              ParentColor = False
+              ParentFont = False
+            end
+            object DBImage1: TDBImage
+              Left = 8
+              Height = 395
+              Top = 56
+              Width = 439
+              DataField = 'FOTOS'
+              DataSource = dsFoto
+              Proportional = True
+              Stretch = True
+            end
+            object nomedafoto: TLabel
+              Left = 8
+              Height = 17
+              Top = 472
+              Width = 91
+              Caption = 'Nome da Foto'
+              Font.CharSet = ANSI_CHARSET
+              Font.Color = clBlack
+              Font.Height = -13
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              Font.Style = [fsItalic]
+              ParentColor = False
+              ParentFont = False
+            end
+          end
+          object PageControl1: TPageControl
+            Left = 0
+            Height = 376
+            Top = 158
+            Width = 816
+            ActivePage = TabSheet3
+            TabIndex = 0
+            TabOrder = 2
+            object TabSheet3: TTabSheet
+              Caption = 'Dado Familiar'
+              ClientHeight = 347
+              ClientWidth = 812
+              object Panel8: TPanel
+                Left = 0
+                Height = 236
+                Top = 111
+                Width = 812
+                Align = alBottom
+                ClientHeight = 236
+                ClientWidth = 812
+                TabOrder = 0
+                object lkcbxEstadoCivil: TDBLookupComboBox
+                  Left = 8
+                  Height = 31
+                  Top = 19
+                  Width = 337
+                  CharCase = ecUppercase
+                  DataField = 'ID_EST_CVL'
+                  DataSource = dsDadosEntidades
+                  KeyField = 'ID_EST_CVL'
+                  ListField = 'DESCRICAO_EST_CVL'
+                  ListFieldIndex = 0
+                  ListSource = dsEstadoCivil
+                  LookupCache = False
+                  Style = csDropDownList
+                  TabOrder = 0
+                end
+                object Label6: TLabel
+                  Left = 8
+                  Height = 19
+                  Top = 3
+                  Width = 77
+                  Caption = 'Estado Civil'
+                  ParentColor = False
+                end
+                object DBEdit7: TDBEdit
+                  Left = 353
+                  Height = 29
+                  Top = 19
+                  Width = 319
+                  DataField = 'ENT_CONJUGE'
+                  DataSource = dsDadosEntidades
+                  CharCase = ecNormal
+                  MaxLength = 0
+                  TabOrder = 1
+                end
+                object Label16: TLabel
+                  Left = 352
+                  Height = 19
+                  Top = 3
+                  Width = 54
+                  Caption = 'Cônjuge'
+                  ParentColor = False
+                end
+                object dbeDependentes: TDBEdit
+                  Left = 680
+                  Height = 29
+                  Top = 19
+                  Width = 104
+                  DataField = 'RC_NUM_DEPENDENTES'
+                  DataSource = dsDadosRHColab
+                  Alignment = taRightJustify
+                  CharCase = ecNormal
+                  MaxLength = 0
+                  TabOrder = 2
+                  OnChange = dbeDependentesChange
+                end
+                object Label11: TLabel
+                  Left = 680
+                  Height = 19
+                  Top = 3
+                  Width = 127
+                  Caption = 'N° de Dependentes'
+                  ParentColor = False
+                end
+                object GroupBox1: TGroupBox
+                  Left = 1
+                  Height = 179
+                  Top = 56
+                  Width = 810
+                  Align = alBottom
+                  Caption = 'Dependentes'
+                  ClientHeight = 158
+                  ClientWidth = 806
+                  TabOrder = 3
+                  object Edit1: TEdit
+                    Left = 8
+                    Height = 29
+                    Top = 16
+                    Width = 296
+                    TabOrder = 0
+                  end
+                  object DateEdit1: TDateEdit
+                    Left = 480
+                    Height = 29
+                    Top = 16
+                    Width = 107
+                    CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+                    DateOrder = doNone
+                    ButtonWidth = 23
+                    NumGlyphs = 1
+                    MaxLength = 0
+                    TabOrder = 1
+                  end
+                  object DBGrid4: TDBGrid
+                    Left = 0
+                    Height = 103
+                    Top = 55
+                    Width = 806
+                    Align = alBottom
+                    Color = clWindow
+                    Columns = <>
+                    DataSource = dsDependentes
+                    TabOrder = 2
+                  end
+                  object Button3: TButton
+                    Left = 608
+                    Height = 25
+                    Top = 14
+                    Width = 75
+                    Caption = 'Adicionar'
+                    OnClick = Button3Click
+                    TabOrder = 3
+                  end
+                  object Label50: TLabel
+                    Left = 8
+                    Height = 19
+                    Top = 0
+                    Width = 142
+                    Caption = 'Nome do Dependente'
+                    ParentColor = False
+                  end
+                  object Label54: TLabel
+                    Left = 480
+                    Height = 19
+                    Top = 0
+                    Width = 133
+                    Caption = 'Data de Nascimento'
+                    ParentColor = False
+                  end
+                  object btnRemover: TButton
+                    Left = 696
+                    Height = 25
+                    Top = 14
+                    Width = 75
+                    Caption = 'Remover'
+                    OnClick = btnRemoverClick
+                    TabOrder = 4
+                  end
+                  object Edit2: TEdit
+                    Left = 312
+                    Height = 29
+                    Top = 16
+                    Width = 160
+                    TabOrder = 5
+                  end
+                  object Label56: TLabel
+                    Left = 312
+                    Height = 19
+                    Top = 0
+                    Width = 129
+                    Caption = 'Grau de Parentesco'
+                    ParentColor = False
+                  end
+                end
+              end
+              object DBGroupBox2: TDBGroupBox
+                Left = 0
+                Height = 115
+                Top = 0
+                Width = 812
+                Align = alTop
+                Caption = 'Filiação'
+                ClientHeight = 94
+                ClientWidth = 808
+                TabOrder = 1
+                object DBEdit4: TDBEdit
+                  Left = 8
+                  Height = 29
+                  Top = 15
+                  Width = 362
+                  DataField = 'ENT_NOME_CUIDADOR_1'
+                  DataSource = dsDadosEntidades
+                  CharCase = ecNormal
+                  MaxLength = 0
+                  TabOrder = 0
+                end
+                object DBEdit5: TDBEdit
+                  Left = 376
+                  Height = 29
+                  Top = 15
+                  Width = 373
+                  DataField = 'ENT_NOME_CUIDADOR_2'
+                  DataSource = dsDadosEntidades
+                  CharCase = ecNormal
+                  MaxLength = 0
+                  TabOrder = 1
+                end
+                object DBEdit12: TDBEdit
+                  Left = 8
+                  Height = 29
+                  Top = 61
+                  Width = 362
+                  CharCase = ecNormal
+                  MaxLength = 0
+                  TabOrder = 2
+                end
+                object DBEdit13: TDBEdit
+                  Left = 376
+                  Height = 29
+                  Top = 61
+                  Width = 373
+                  CharCase = ecNormal
+                  MaxLength = 0
+                  TabOrder = 3
+                end
+                object Label3: TLabel
+                  Left = 8
+                  Height = 19
+                  Top = -1
+                  Width = 44
+                  Caption = 'Nome:'
+                  ParentColor = False
+                end
+                object Label15: TLabel
+                  Left = 376
+                  Height = 19
+                  Top = -1
+                  Width = 40
+                  Caption = 'Nome'
+                  ParentColor = False
+                end
+                object Label17: TLabel
+                  Left = 8
+                  Height = 19
+                  Top = 43
+                  Width = 40
+                  Caption = 'Nome'
+                  ParentColor = False
+                end
+                object Label23: TLabel
+                  Left = 376
+                  Height = 19
+                  Top = 43
+                  Width = 40
+                  Caption = 'Nome'
+                  ParentColor = False
+                end
+              end
+            end
+            object TabSheet4: TTabSheet
+              Caption = 'Complementos Cadastrais'
+              ClientHeight = 347
+              ClientWidth = 812
+              object Panel2: TPanel
+                Left = 0
+                Height = 347
+                Top = 0
+                Width = 812
+                Align = alClient
+                ClientHeight = 347
+                ClientWidth = 812
+                TabOrder = 0
+                object dbgroupboxTE: TDBGroupBox
+                  Left = 1
+                  Height = 73
+                  Top = 168
+                  Width = 407
+                  Caption = 'Título de Eleitor'
+                  ClientHeight = 52
+                  ClientWidth = 403
+                  TabOrder = 0
+                  object Label24: TLabel
+                    Left = 7
+                    Height = 19
+                    Top = 0
+                    Width = 54
+                    Caption = 'Número'
+                    ParentColor = False
+                  end
+                  object Label25: TLabel
+                    Left = 279
+                    Height = 19
+                    Top = 0
+                    Width = 40
+                    Caption = 'Seção'
+                    ParentColor = False
+                  end
+                  object Label26: TLabel
+                    Left = 183
+                    Height = 19
+                    Top = 0
+                    Width = 34
+                    Caption = 'Zona'
+                    ParentColor = False
+                  end
+                  object dbeNumeroTE: TDBEdit
+                    Left = 7
+                    Height = 29
+                    Top = 20
+                    Width = 160
+                    DataField = 'RC_TE_NUMERO'
+                    DataSource = dsDadosRHColab
+                    CharCase = ecNormal
+                    MaxLength = 0
+                    TabOrder = 0
+                  end
+                  object dbeZonaTE: TDBEdit
+                    Left = 183
+                    Height = 29
+                    Top = 20
+                    Width = 80
+                    DataField = 'RC_TE_ZONA'
+                    DataSource = dsDadosRHColab
+                    Alignment = taRightJustify
+                    CharCase = ecNormal
+                    MaxLength = 0
+                    TabOrder = 1
+                  end
+                  object dbeSecaoTE: TDBEdit
+                    Left = 279
+                    Height = 29
+                    Top = 20
+                    Width = 80
+                    DataField = 'RC_TE_SECAO'
+                    DataSource = dsDadosRHColab
+                    Alignment = taRightJustify
+                    CharCase = ecNormal
+                    MaxLength = 0
+                    TabOrder = 2
+                  end
+                end
+                object dbgroupboxCT: TDBGroupBox
+                  Left = -7
+                  Height = 73
+                  Top = 2
+                  Width = 640
+                  Caption = 'Carteira de Trabalho'
+                  ClientHeight = 52
+                  ClientWidth = 636
+                  TabOrder = 1
+                  object Label27: TLabel
+                    Left = 215
+                    Height = 19
+                    Top = -1
+                    Width = 54
+                    Caption = 'Número'
+                    ParentColor = False
+                  end
+                  object dbeNumeroCT: TDBEdit
+                    Left = 208
+                    Height = 29
+                    Top = 19
+                    Width = 139
+                    DataField = 'RC_CTPSNUMERO'
+                    DataSource = dsDadosRHColab
+                    CharCase = ecNormal
+                    MaxLength = 0
+                    TabOrder = 1
+                  end
+                  object Label28: TLabel
+                    Left = 360
+                    Height = 19
+                    Top = -1
+                    Width = 35
+                    Caption = 'Serie'
+                    ParentColor = False
+                  end
+                  object Label29: TLabel
+                    Left = 424
+                    Height = 19
+                    Top = -1
+                    Width = 19
+                    Caption = 'UF'
+                    ParentColor = False
+                  end
+                  object Label30: TLabel
+                    Left = 488
+                    Height = 19
+                    Top = -1
+                    Width = 63
+                    Caption = 'Matricula'
+                    ParentColor = False
+                  end
+                  object dbeSerieCT: TDBEdit
+                    Left = 352
+                    Height = 29
+                    Top = 19
+                    Width = 64
+                    DataField = 'RC_CTPSSERIE'
+                    DataSource = dsDadosRHColab
+                    Alignment = taRightJustify
+                    CharCase = ecNormal
+                    MaxLength = 0
+                    TabOrder = 2
+                  end
+                  object dbeMatriculaCT: TDBEdit
+                    Left = 488
+                    Height = 29
+                    Top = 19
+                    Width = 88
+                    DataField = 'RC_MATRICULA'
+                    DataSource = dsDadosRHColab
+                    CharCase = ecNormal
+                    MaxLength = 0
+                    TabOrder = 3
+                  end
+                  object dbePISCT: TDBEdit
+                    Left = 7
+                    Height = 29
+                    Top = 20
+                    Width = 193
+                    DataField = 'RC_NUMERO_PIS'
+                    DataSource = dsDadosRHColab
+                    CharCase = ecNormal
+                    MaxLength = 0
+                    TabOrder = 0
+                  end
+                  object Label48: TLabel
+                    Left = 8
+                    Height = 19
+                    Top = 0
+                    Width = 22
+                    Caption = 'PIS'
+                    ParentColor = False
+                  end
+                  object DBLookupComboBox1: TDBLookupComboBox
+                    Left = 424
+                    Height = 29
+                    Top = 19
+                    Width = 51
+                    DataField = 'ID_UF'
+                    DataSource = dsDadosEntidades
+                    KeyField = 'ID_UF'
+                    ListField = 'SIGLA'
+                    ListFieldIndex = 0
+                    ListSource = dsUFIdent
+                    LookupCache = False
+                    TabOrder = 4
+                  end
+                end
+                object dbgroupboxCH: TDBGroupBox
+                  Left = 1
+                  Height = 72
+                  Top = 250
+                  Width = 407
+                  Caption = 'Carteira de Habilitação'
+                  ClientHeight = 51
+                  ClientWidth = 403
+                  TabOrder = 2
+                  object Label32: TLabel
+                    Left = 7
+                    Height = 19
+                    Top = 0
+                    Width = 54
+                    Caption = 'Número'
+                    ParentColor = False
+                  end
+                  object dbeNumeroCH: TDBEdit
+                    Left = 7
+                    Height = 29
+                    Top = 22
+                    Width = 160
+                    DataField = 'RC_CNH_NUMERO'
+                    DataSource = dsDadosRHColab
+                    Alignment = taRightJustify
+                    CharCase = ecNormal
+                    MaxLength = 0
+                    TabOrder = 0
+                  end
+                  object Label33: TLabel
+                    Left = 183
+                    Height = 19
+                    Top = 1
+                    Width = 65
+                    Caption = 'Categoria'
+                    ParentColor = False
+                  end
+                  object bdcbxCategoria: TDBLookupComboBox
+                    Left = 183
+                    Height = 31
+                    Top = 21
+                    Width = 176
+                    DataField = 'RC_CAT_CNH'
+                    DataSource = dsDadosRHColab
+                    KeyField = 'ID'
+                    ListField = 'CNH'
+                    ListFieldIndex = 0
+                    ListSource = dsCategoriaCH
+                    LookupCache = False
+                    Style = csDropDownList
+                    TabOrder = 1
+                  end
+                end
+                object dbgroupboxCR: TDBGroupBox
+                  Left = -7
+                  Height = 72
+                  Top = 86
+                  Width = 640
+                  Caption = 'Certidão de Reservista'
+                  ClientHeight = 51
+                  ClientWidth = 636
+                  TabOrder = 3
+                  object Label35: TLabel
+                    Left = 207
+                    Height = 19
+                    Top = 0
+                    Width = 35
+                    Caption = 'Serie'
+                    ParentColor = False
+                  end
+                  object Label36: TLabel
+                    Left = 351
+                    Height = 19
+                    Top = 1
+                    Width = 65
+                    Caption = 'Categoria'
+                    ParentColor = False
+                  end
+                  object dbeNumeroCR: TDBEdit
+                    Left = 7
+                    Height = 29
+                    Top = 22
+                    Width = 192
+                    DataField = 'RC_CR_NUMERO'
+                    DataSource = dsDadosRHColab
+                    CharCase = ecNormal
+                    MaxLength = 0
+                    TabOrder = 0
+                  end
+                  object dbeSerieCR: TDBEdit
+                    Left = 207
+                    Height = 29
+                    Top = 21
+                    Width = 135
+                    DataField = 'RC_CR_SERIE'
+                    DataSource = dsDadosRHColab
+                    Alignment = taRightJustify
+                    CharCase = ecNormal
+                    MaxLength = 0
+                    TabOrder = 1
+                  end
+                  object dbeCategoriaCR: TDBEdit
+                    Left = 351
+                    Height = 29
+                    Top = 21
+                    Width = 233
+                    DataField = 'RC_CR_CATEG'
+                    DataSource = dsDadosRHColab
+                    Alignment = taRightJustify
+                    CharCase = ecNormal
+                    MaxLength = 0
+                    TabOrder = 2
+                  end
+                  object Label34: TLabel
+                    Left = 7
+                    Height = 19
+                    Top = 1
+                    Width = 54
+                    Caption = 'Número'
+                    ParentColor = False
+                  end
+                end
+              end
+            end
+          end
+        end
+        object tsEndereco: TTabSheet
+          Caption = 'Endereços'
+          ClientHeight = 537
+          ClientWidth = 1266
+          object dbgroupboxEnd1: TDBGroupBox
+            Left = 0
+            Height = 136
+            Top = 0
+            Width = 1266
+            Align = alTop
+            Caption = 'Endereço'
+            ClientHeight = 115
+            ClientWidth = 1262
+            Color = clSilver
+            ParentColor = False
+            TabOrder = 0
+            object Label55: TLabel
+              Left = 8
+              Height = 19
+              Top = 4
+              Width = 28
+              Caption = 'CEP'
+              ParentColor = False
+            end
+            object Label62: TLabel
+              Left = 279
+              Height = 19
+              Top = 4
+              Width = 46
+              Caption = 'Cidade'
+              ParentColor = False
+            end
+            object Label63: TLabel
+              Left = 563
+              Height = 19
+              Top = 4
+              Width = 42
+              Caption = 'Bairro'
+              ParentColor = False
+            end
+            object Label64: TLabel
+              Left = 8
+              Height = 19
+              Top = 53
+              Width = 76
+              Caption = 'Logradouro'
+              ParentColor = False
+            end
+            object Label65: TLabel
+              Left = 309
+              Height = 19
+              Top = 53
+              Width = 54
+              Caption = 'Número'
+              ParentColor = False
+            end
+            object Label66: TLabel
+              Left = 858
+              Height = 19
+              Top = 5
+              Width = 34
+              Caption = 'Zona'
+              ParentColor = False
+            end
+            object Label67: TLabel
+              Left = 389
+              Height = 19
+              Top = 53
+              Width = 93
+              Caption = 'Complemento'
+              ParentColor = False
+            end
+            object dbeLogradouro: TDBEdit
+              Left = 8
+              Height = 29
+              Top = 72
+              Width = 294
+              DataField = 'ENT_LOGRADOURO'
+              DataSource = dsDadosEntidades
+              CharCase = ecUppercase
+              MaxLength = 0
+              TabOrder = 6
+            end
+            object dbeNumeroEnd: TDBEdit
+              Left = 309
+              Height = 29
+              Top = 72
+              Width = 72
+              DataField = 'ENT_NUMERO'
+              DataSource = dsDadosEntidades
+              CharCase = ecNormal
+              MaxLength = 0
+              TabOrder = 7
+            end
+            object dbeComplemento: TDBEdit
+              Left = 388
+              Height = 29
+              Top = 72
+              Width = 580
+              DataField = 'ENT_COMPLEMENTO'
+              DataSource = dsDadosEntidades
+              CharCase = ecUppercase
+              MaxLength = 0
+              TabOrder = 8
+            end
+            object Label68: TLabel
+              Left = 215
+              Height = 19
+              Top = 4
+              Width = 19
+              Caption = 'UF'
+              ParentColor = False
+            end
+            object btnCEP: TButton
+              Left = 125
+              Height = 25
+              Hint = 'Clique para pesquisar o CEP'
+              Top = 22
+              Width = 81
+              Caption = 'Buscar CEP'
+              OnClick = btnCEPClick
+              ParentShowHint = False
+              ShowHint = True
+              TabOrder = 1
+            end
+            object lkcbxZona: TDBLookupComboBox
+              Left = 858
+              Height = 29
+              Top = 24
+              Width = 101
+              CharCase = ecUppercase
+              DataField = 'ZONA'
+              DataSource = dsDadosEntidades
+              KeyField = 'ID'
+              ListField = 'ENDERECO'
+              ListFieldIndex = 0
+              ListSource = dsEndeZona
+              LookupCache = False
+              TabOrder = 5
+            end
+            object dbedtCEP: TDBEdit
+              Left = 8
+              Height = 29
+              Top = 24
+              Width = 112
+              DataField = 'ENT_CEP'
+              DataSource = dsDadosEntidades
+              CharCase = ecNormal
+              MaxLength = 0
+              TabOrder = 0
+              OnExit = dbedtCEPExit
+              OnKeyPress = dbedtCEPKeyPress
+            end
+            object lkcbxUF: TDBLookupComboBox
+              Left = 215
+              Height = 29
+              Top = 24
+              Width = 56
+              CharCase = ecUppercase
+              DataField = 'ID_UF'
+              DataSource = dsDadosEntidades
+              KeyField = 'ID_UF'
+              ListField = 'SIGLA'
+              ListFieldIndex = 0
+              ListSource = dsUFIdent
+              LookupCache = False
+              OnSelect = lkcbxUFSelect
+              TabOrder = 2
+            end
+            object lkcbxCidade: TDBLookupComboBox
+              Left = 279
+              Height = 29
+              Top = 23
+              Width = 276
+              CharCase = ecUppercase
+              DataField = 'ID_CIDADE'
+              DataSource = dsDadosEntidades
+              KeyField = 'ID_CIDADE'
+              ListField = 'NOME_CIDADE'
+              ListFieldIndex = 0
+              ListSource = dsCidade
+              LookupCache = False
+              OnSelect = lkcbxCidadeSelect
+              Style = csOwnerDrawEditableFixed
+              TabOrder = 3
+            end
+            object lkcbxBairro: TDBLookupComboBox
+              Left = 563
+              Height = 29
+              Top = 23
+              Width = 286
+              CharCase = ecUppercase
+              DataField = 'ENT_BAIRRO'
+              DataSource = dsDadosEntidades
+              KeyField = 'BAI_DESCRICAO'
+              ListField = 'BAI_DESCRICAO'
+              ListFieldIndex = 0
+              ListSource = dsBairro
+              LookupCache = False
+              Style = csOwnerDrawEditableFixed
+              TabOrder = 4
+            end
+            object Label40: TLabel
+              Left = 1022
+              Height = 19
+              Top = 81
+              Width = 214
+              Caption = 'Quantidade de Registro'
+              Color = clSilver
+              Font.CharSet = ANSI_CHARSET
+              Font.Color = clBlack
+              Font.Height = -16
+              Font.Name = 'Segoe UI'
+              Font.Pitch = fpVariable
+              Font.Quality = fqDraft
+              Font.Style = [fsBold]
+              ParentColor = False
+              ParentFont = False
+              Transparent = False
+            end
+          end
+          object DBGrid1: TDBGrid
+            Left = 0
+            Height = 401
+            Top = 136
+            Width = 1222
+            Align = alClient
+            Color = clWindow
+            Columns = <>
+            DataSource = dsHistoricoEndereco
+            Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+            TabOrder = 1
+            OnCellClick = DBGrid1CellClick
+            OnKeyDown = DBGrid1KeyDown
+            OnKeyUp = DBGrid1KeyUp
+          end
+          object DBNavigator1: TDBNavigator
+            Left = 1222
+            Height = 401
+            Top = 136
+            Width = 44
+            Align = alRight
+            BevelOuter = bvNone
+            ChildSizing.EnlargeHorizontal = crsScaleChilds
+            ChildSizing.EnlargeVertical = crsScaleChilds
+            ChildSizing.ShrinkHorizontal = crsScaleChilds
+            ChildSizing.ShrinkVertical = crsScaleChilds
+            ChildSizing.Layout = cclTopToBottomThenLeftToRight
+            ChildSizing.ControlsPerLine = 100
+            ClientHeight = 401
+            ClientWidth = 44
+            DataSource = dsHistoricoEndereco
+            Direction = nbdVertical
+            Options = []
+            TabOrder = 2
+            VisibleButtons = [nbInsert, nbDelete, nbEdit, nbPost, nbCancel]
+          end
+        end
+        object tsFinanceiro: TTabSheet
+          Caption = 'Financeiro'
+          ClientHeight = 537
+          ClientWidth = 1266
+          object Panel3: TPanel
+            Left = 0
+            Height = 537
+            Top = 0
+            Width = 1266
+            Align = alClient
+            ClientHeight = 537
+            ClientWidth = 1266
+            TabOrder = 0
+            object dbgroupboxDadosAdmis: TDBGroupBox
+              Left = 1
+              Height = 96
+              Top = 1
+              Width = 1264
+              Align = alTop
+              Caption = 'Dados da Admissão'
+              ClientHeight = 75
+              ClientWidth = 1260
+              TabOrder = 0
+              object Label37: TLabel
+                Left = 8
+                Height = 19
+                Top = 8
+                Width = 126
+                Caption = 'Data da Admissão*'
+                ParentColor = False
+              end
+              object Label38: TLabel
+                Left = 183
+                Height = 19
+                Top = 8
+                Width = 128
+                Caption = 'Auxilio Transporte*'
+                ParentColor = False
+              end
+              object Label39: TLabel
+                Left = 327
+                Height = 19
+                Top = 8
+                Width = 131
+                Caption = 'Aliquota Transporte'
+                ParentColor = False
+              end
+              object dbeAuxTrans: TDBEdit
+                Left = 183
+                Height = 29
+                Top = 32
+                Width = 136
+                DataField = 'RC_AUXTRANSP'
+                DataSource = dsDadosRHColab
+                CharCase = ecNormal
+                MaxLength = 0
+                TabOrder = 1
+              end
+              object dbeAliqTrans: TDBEdit
+                Left = 327
+                Height = 29
+                Top = 32
+                Width = 136
+                DataField = 'RC_ALIQTANSP'
+                DataSource = dsDadosRHColab
+                Alignment = taRightJustify
+                CharCase = ecNormal
+                MaxLength = 0
+                TabOrder = 2
+              end
+              object Label60: TLabel
+                Left = 472
+                Height = 19
+                Top = 8
+                Width = 65
+                Caption = 'Comissão'
+                ParentColor = False
+              end
+              object dbeComissao: TDBEdit
+                Left = 472
+                Height = 29
+                Top = 32
+                Width = 144
+                DataField = 'RC_COMISSAO'
+                DataSource = dsDadosRHColab
+                Alignment = taRightJustify
+                CharCase = ecNormal
+                MaxLength = 0
+                TabOrder = 3
+              end
+              object dbDataAdmissao: TDBDateEdit
+                Left = 8
+                Height = 29
+                Top = 32
+                Width = 168
+                CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+                DateOrder = doNone
+                ButtonWidth = 23
+                NumGlyphs = 1
+                MaxLength = 0
+                OnChange = dbDataAdmissaoChange
+                TabOrder = 0
+                DataField = 'RC_ADMISSAO'
+                DataSource = dsDadosRHColab
+              end
+            end
+            object dbgroupboxDadosDemis: TDBGroupBox
+              Left = 1
+              Height = 200
+              Top = 336
+              Width = 1264
+              Align = alBottom
+              Caption = 'Dados Demissionais'
+              ClientHeight = 179
+              ClientWidth = 1260
+              TabOrder = 1
+              object Label44: TLabel
+                Left = 9
+                Height = 19
+                Top = 8
+                Width = 120
+                Caption = 'Data da Demissão'
+                ParentColor = False
+              end
+              object Label45: TLabel
+                Left = 190
+                Height = 19
+                Top = 8
+                Width = 113
+                Caption = 'Data Aviso Inicial'
+                ParentColor = False
+              end
+              object Label46: TLabel
+                Left = 375
+                Height = 19
+                Top = 8
+                Width = 107
+                Caption = 'Data Aviso Final'
+                ParentColor = False
+              end
+              object Label47: TLabel
+                Left = 8
+                Height = 19
+                Top = 64
+                Width = 133
+                Caption = 'Motivo da Demissão'
+                ParentColor = False
+              end
+              object dbDataAvisoFinal: TDBDateEdit
+                Left = 375
+                Height = 29
+                Top = 32
+                Width = 176
+                CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+                DateOrder = doNone
+                ButtonWidth = 23
+                NumGlyphs = 1
+                MaxLength = 0
+                OnChange = dbDataAvisoFinalChange
+                TabOrder = 2
+                DataField = 'RC_AVISOFIM'
+                DataSource = dsDadosRHColab
+              end
+              object dbDataAvisoInicial: TDBDateEdit
+                Left = 190
+                Height = 29
+                Top = 32
+                Width = 175
+                CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+                DateOrder = doNone
+                ButtonWidth = 23
+                NumGlyphs = 1
+                MaxLength = 0
+                OnChange = dbDataAvisoInicialChange
+                TabOrder = 1
+                DataField = 'RC_AVISOINI'
+                DataSource = dsDadosRHColab
+              end
+              object dbDataDemissao: TDBDateEdit
+                Left = 8
+                Height = 29
+                Top = 32
+                Width = 176
+                CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+                DateOrder = doNone
+                ButtonWidth = 23
+                NumGlyphs = 1
+                MaxLength = 0
+                OnChange = dbDataDemissaoChange
+                TabOrder = 0
+                DataField = 'RC_DEMISSAO'
+                DataSource = dsDadosRHColab
+              end
+              object lkcbxMotivoDemi: TDBLookupComboBox
+                Left = 8
+                Height = 31
+                Top = 88
+                Width = 559
+                CharCase = ecUppercase
+                DataField = 'RC_DEMISSAOMOTIVO'
+                DataSource = dsDadosRHColab
+                Enabled = False
+                KeyField = 'ID'
+                ListField = 'MOTIVO'
+                ListFieldIndex = 0
+                ListSource = dsMotivo
+                LookupCache = False
+                Style = csDropDownList
+                TabOrder = 3
+              end
+              object Label61: TLabel
+                Left = 592
+                Height = 19
+                Top = 64
+                Width = 39
+                Caption = 'Outro'
+                ParentColor = False
+              end
+              object DBEdit3: TDBEdit
+                Left = 592
+                Height = 29
+                Top = 88
+                Width = 558
+                DataField = 'ENT_OBS'
+                DataSource = dsDadosEntidades
+                CharCase = ecNormal
+                MaxLength = 0
+                TabOrder = 4
+              end
+            end
+            object DBGroupBox8: TDBGroupBox
+              Left = 1
+              Height = 231
+              Top = 97
+              Width = 1264
+              Align = alTop
+              Caption = 'Dados Financeiros Referente ao Cargo e Salario'
+              ClientHeight = 210
+              ClientWidth = 1260
+              TabOrder = 2
+              object dbgridSalario: TDBGrid
+                Left = 0
+                Height = 204
+                Top = 6
+                Width = 1260
+                Align = alBottom
+                Color = clWindow
+                Columns = <>
+                DataSource = dsDadosFinanceiros
+                Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+                TabOrder = 0
+              end
+            end
+          end
+        end
+        object tsdadosbancarios: TTabSheet
+          Caption = 'Dados Bancários'
+          ClientHeight = 537
+          ClientWidth = 1266
+          object dbgroupboxDadosBanc: TDBGroupBox
+            Left = 0
+            Height = 104
+            Top = 0
+            Width = 1266
+            Align = alTop
+            Caption = 'Dados Bancários Para a Empresa'
+            ClientHeight = 83
+            ClientWidth = 1262
+            TabOrder = 0
+            object Label41: TLabel
+              Left = 8
+              Height = 19
+              Top = 8
+              Width = 88
+              Caption = 'Buscar banco'
+              ParentColor = False
+            end
+            object Label42: TLabel
+              Left = 376
+              Height = 19
+              Top = 8
+              Width = 53
+              Caption = 'Agencia'
+              ParentColor = False
+            end
+            object Label43: TLabel
+              Left = 512
+              Height = 19
+              Top = 8
+              Width = 165
+              Caption = 'Número da Conta Salário'
+              ParentColor = False
+            end
+            object dbeNumeroConta: TDBEdit
+              Left = 512
+              Height = 29
+              Top = 32
+              Width = 184
+              DataField = 'RC_CCORRENTE'
+              DataSource = dsDadosRHColab
+              Alignment = taRightJustify
+              CharCase = ecNormal
+              MaxLength = 0
+              TabOrder = 3
+            end
+            object dbeAgencia: TDBEdit
+              Left = 376
+              Height = 29
+              Top = 33
+              Width = 119
+              DataField = 'RC_AGENCIA'
+              DataSource = dsDadosRHColab
+              Alignment = taRightJustify
+              CharCase = ecUppercase
+              MaxLength = 0
+              TabOrder = 2
+            end
+            object Panel5: TPanel
+              Left = 8
+              Height = 33
+              Top = 31
+              Width = 88
+              ClientHeight = 29
+              ClientWidth = 84
+              TabOrder = 0
+              object DBEdit2: TDBEdit
+                Left = 0
+                Height = 29
+                Top = 2
+                Width = 64
+                DataField = 'BAN_COD'
+                DataSource = dsDadosRHColab
+                Alignment = taRightJustify
+                CharCase = ecNormal
+                MaxLength = 0
+                TabOrder = 0
+              end
+              object btnBanco: TSpeedButton
+                Left = 64
+                Height = 29
+                Top = 2
+                Width = 25
+                Images = DM.ImageDM
+                ImageIndex = 24
+                ImageWidth = 20
+                OnClick = btnBancoClick
+              end
+            end
+            object dbeDescricaoBanco: TDBEdit
+              Left = 106
+              Height = 29
+              Top = 33
+              Width = 256
+              CustomEditMask = True
+              DataField = 'ENT_NOME'
+              DataSource = dsDadosRHColab
+              CharCase = ecUppercase
+              MaxLength = 0
+              TabOrder = 1
+            end
+            object Label18: TLabel
+              Left = 106
+              Height = 19
+              Top = 8
+              Width = 103
+              Caption = 'Nome do Banco'
+              ParentColor = False
+            end
+          end
+          object DBGroupBox1: TDBGroupBox
+            Left = 0
+            Height = 96
+            Top = 104
+            Width = 1266
+            Align = alTop
+            Caption = 'Dados Bancários Pessoais'
+            ClientHeight = 75
+            ClientWidth = 1262
+            TabOrder = 1
+            object Panel6: TPanel
+              Left = 8
+              Height = 33
+              Top = 29
+              Width = 96
+              ClientHeight = 29
+              ClientWidth = 92
+              TabOrder = 0
+              object dbeBanco2: TDBEdit
+                Left = 0
+                Height = 29
+                Top = 0
+                Width = 64
+                DataField = 'RC_BAN_COD_P'
+                DataSource = dsDadosRHColab
+                Alignment = taRightJustify
+                CharCase = ecUppercase
+                MaxLength = 0
+                TabOrder = 0
+              end
+              object SpeedButton1: TSpeedButton
+                Left = 64
+                Height = 29
+                Top = 0
+                Width = 30
+                Images = DM.ImageDM
+                ImageIndex = 24
+                ImageWidth = 20
+                OnClick = SpeedButton1Click
+              end
+            end
+            object Label57: TLabel
+              Left = 14
+              Height = 19
+              Top = 4
+              Width = 88
+              Caption = 'Buscar banco'
+              ParentColor = False
+            end
+            object dbeDescricaoBanco1: TDBEdit
+              Left = 113
+              Height = 29
+              Top = 28
+              Width = 255
+              CustomEditMask = True
+              DataField = 'RC_NOME_BANCO_P'
+              DataSource = dsDadosRHColab
+              CharCase = ecUppercase
+              MaxLength = 0
+              TabOrder = 1
+            end
+            object Label51: TLabel
+              Left = 112
+              Height = 19
+              Top = 4
+              Width = 103
+              Caption = 'Nome do Banco'
+              ParentColor = False
+            end
+            object dbeAgencia1: TDBEdit
+              Left = 382
+              Height = 29
+              Top = 29
+              Width = 119
+              DataField = 'RC_AGENCIA_P'
+              DataSource = dsDadosRHColab
+              CharCase = ecUppercase
+              MaxLength = 0
+              TabOrder = 2
+            end
+            object Label52: TLabel
+              Left = 382
+              Height = 19
+              Top = 4
+              Width = 53
+              Caption = 'Agencia'
+              ParentColor = False
+            end
+            object dbeNumeroConta1: TDBEdit
+              Left = 518
+              Height = 29
+              Top = 28
+              Width = 184
+              DataField = 'RC_CCORRENTE'
+              Alignment = taRightJustify
+              CharCase = ecNormal
+              MaxLength = 0
+              TabOrder = 3
+            end
+            object Label53: TLabel
+              Left = 518
+              Height = 19
+              Top = 4
+              Width = 177
+              Caption = 'Número da Conta Corrente'
+              ParentColor = False
+            end
+          end
+        end
+      end
+    end
+    object tsConsulta: TTabSheet
+      Caption = 'Consulta'
+      ClientHeight = 568
+      ClientWidth = 1279
+      ImageIndex = 10
+      object DBGrid3: TDBGrid
+        Left = 0
+        Height = 504
+        Top = 64
+        Width = 1279
+        Align = alClient
+        Color = clWindow
+        Columns = <>
+        DataSource = dsConsultaColaborador
+        Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+        TabOrder = 1
+      end
+      object Panel4: TPanel
+        Left = 0
+        Height = 64
+        Top = 0
+        Width = 1279
+        Align = alTop
+        ClientHeight = 64
+        ClientWidth = 1279
+        TabOrder = 0
+        object Label31: TLabel
+          Left = 11
+          Height = 19
+          Top = 6
+          Width = 46
+          Caption = 'Código'
+          ParentColor = False
+        end
+        object edtCodColab: TEdit
+          Left = 11
+          Height = 29
+          Top = 30
+          Width = 100
+          NumbersOnly = True
+          OnKeyPress = edtCodColabKeyPress
+          TabOrder = 0
+        end
+        object Label58: TLabel
+          Left = 265
+          Height = 19
+          Top = 6
+          Width = 144
+          Caption = 'Nome do Colaborador'
+          ParentColor = False
+        end
+        object edtNomeColab: TEdit
+          Left = 265
+          Height = 29
+          Top = 30
+          Width = 376
+          CharCase = ecUppercase
+          OnKeyPress = edtNomeColabKeyPress
+          TabOrder = 2
+        end
+        object Label59: TLabel
+          Left = 116
+          Height = 19
+          Top = 6
+          Width = 28
+          Caption = 'CPF'
+          ParentColor = False
+        end
+        object edtCpfColab: TEdit
+          Left = 116
+          Height = 29
+          Top = 30
+          Width = 144
+          NumbersOnly = True
+          OnExit = edtCpfColabExit
+          OnKeyPress = edtCpfColabKeyPress
+          TabOrder = 1
+        end
+      end
+    end
+  end
+  object qryDadosEntidades: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'ENT_NOME'
+        DataType = ftString
+        Precision = -1
+        Size = 60
+      end    
+      item
+        Name = 'ENT_COD'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'ENT_CNPJ_CPF'
+        DataType = ftString
+        Precision = -1
+        Size = 14
+      end    
+      item
+        Name = 'ENT_FONE'
+        DataType = ftString
+        Precision = -1
+        Size = 15
+      end    
+      item
+        Name = 'ENT_CELULAR'
+        DataType = ftString
+        Precision = -1
+        Size = 11
+      end    
+      item
+        Name = 'ENT_CEP'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = 'ENT_LOGRADOURO'
+        DataType = ftString
+        Precision = -1
+        Size = 60
+      end    
+      item
+        Name = 'ENT_COMPLEMENTO'
+        DataType = ftString
+        Precision = -1
+        Size = 60
+      end    
+      item
+        Name = 'ENT_BAIRRO'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'ENT_UF'
+        DataType = ftString
+        Precision = -1
+        Size = 2
+      end    
+      item
+        Name = 'ENT_ORGAO'
+        DataType = ftString
+        Precision = -1
+        Size = 10
+      end    
+      item
+        Name = 'ZONA'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'ENT_CELULAR2'
+        DataType = ftString
+        Precision = -1
+        Size = 11
+      end    
+      item
+        Name = 'ENT_RESIDENTEDESDE'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'ID_UF'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'ID_CIDADE'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'IDUSER'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'ENT_ORGAOUF'
+        DataType = ftString
+        Precision = -1
+        Size = 2
+      end    
+      item
+        Name = 'ENT_CIDADE'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'ENT_NUMERO'
+        DataType = ftString
+        Precision = -1
+        Size = 10
+      end    
+      item
+        Name = 'ENT_STATUS'
+        DataType = ftString
+        Precision = -1
+        Size = 1
+      end    
+      item
+        Name = 'ENT_OBS'
+        DataType = ftString
+        Precision = -1
+        Size = 1000
+      end    
+      item
+        Name = 'ENT_BANCO1'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'PRO_REDUZ_ISS'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 1
+      end    
+      item
+        Name = 'ENT_DT_CAD'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'ENT_COB_UF'
+        DataType = ftString
+        Precision = -1
+        Size = 2
+      end    
+      item
+        Name = 'ENT_NUMERO_1'
+        DataType = ftString
+        Precision = -1
+        Size = 10
+      end    
+      item
+        Name = 'ENT_TP_FISCAL'
+        DataType = ftString
+        Precision = -1
+        Size = 1
+      end    
+      item
+        Name = 'ENT_FANTASIA'
+        DataType = ftString
+        Precision = -1
+        Size = 60
+      end    
+      item
+        Name = 'ENT_DT_CAD_1'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'ENT_NAT_ENT'
+        DataType = ftString
+        Precision = -1
+        Size = 1
+      end    
+      item
+        Name = 'ENT_TIPO_ENT'
+        DataType = ftString
+        Precision = -1
+        Size = 1
+      end    
+      item
+        Name = 'ENT_INSC_ESTADUAL'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'ENT_INSC_MUNICIPAL_RG'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'ENT_FAX'
+        DataType = ftString
+        Precision = -1
+        Size = 15
+      end    
+      item
+        Name = 'ENT_COB_CEP'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = 'ENT_COB_LOGRADOURO'
+        DataType = ftString
+        Precision = -1
+        Size = 60
+      end    
+      item
+        Name = 'ID_UF_EXP'
+        DataType = ftString
+        Precision = -1
+        Size = 2
+      end    
+      item
+        Name = 'ID_EST_CVL'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'ENT_DATA_NASC'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'ENT_NOME_SOCIAL'
+        DataType = ftString
+        Precision = -1
+        Size = 60
+      end    
+      item
+        Name = 'ENT_NOME_CUIDADOR_1'
+        DataType = ftString
+        Precision = -1
+        Size = 60
+      end    
+      item
+        Name = 'ENT_NOME_CUIDADOR_2'
+        DataType = ftString
+        Precision = -1
+        Size = 60
+      end    
+      item
+        Name = 'ENT_CONJUGE'
+        DataType = ftString
+        Precision = -1
+        Size = 60
+      end    
+      item
+        Name = 'PAR_COD'
+        DataType = ftInteger
+        Precision = -1
+      end>
+    AfterOpen = qryDadosEntidadesAfterOpen
+    AfterScroll = qryDadosEntidadesAfterScroll
+    OnNewRecord = qryDadosEntidadesNewRecord
+    Database = DM.sqlConectorDM
+    Transaction = DM.sqlTransactionDM
+    SQL.Strings = (
+      'select'
+      '    /*IDENTIFICAÇÃO*/'
+      '    ent.ent_nome, ent.ent_cod, ent.ent_cnpj_cpf, ent.ent_fone, ent.ent_celular,'
+      '    ent.ent_cep, ent.ent_logradouro, ent.ent_complemento, ent.ent_bairro,'
+      '    ent.ent_uf, ent.ent_orgao, ent.zona, ent.ent_celular2,'
+      '    ent.ent_residentedesde, ent.id_uf, ent.id_cidade, ent.iduser,'
+      '    ent.ent_orgaouf, ent.ent_cidade, ent.ent_numero, ent.ent_status,'
+      '    ent.ent_obs, ent.ent_banco1, ent.pro_reduz_iss, ent.ent_dt_cad,'
+      '    ent.ent_cob_uf, ent.ent_numero, ent.ent_tp_fiscal, ent.ent_fantasia,'
+      '    ent.ent_dt_cad, ent.ent_nat_ent, ent.ent_tipo_ent, ent.ent_insc_estadual,'
+      '    ent.ent_insc_municipal_rg, ent.ent_fax, ent.ent_cob_cep,'
+      '    ent.ent_cob_logradouro, ent.id_uf_exp, ent.id_est_cvl,'
+      '    ent.ent_data_nasc, ent.ent_nome_social, ent.ent_nome_cuidador_1,'
+      '    ent.ent_nome_cuidador_2, ent.ent_conjuge,'
+      ''
+      ''
+      ''
+      '    /*Tabela de parametros*/'
+      '    ent.par_cod'
+      ''
+      ''
+      'from entidades ent'
+      'where ent.ent_cod = :ent_cod'
+    )
+    InsertSQL.Strings = (
+      ''
+    )
+    UpdateSQL.Strings = (
+      ''
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'ent_cod'
+        ParamType = ptInput
+      end>
+    left = 1048
+    top = 16
+    object qryDadosEntidadesENT_NOME: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_NOME'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object qryDadosEntidadesENT_COD: TLongintField
+      FieldKind = fkData
+      FieldName = 'ENT_COD'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosEntidadesENT_CNPJ_CPF: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_CNPJ_CPF'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 14
+    end
+    object qryDadosEntidadesENT_FONE: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_FONE'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object qryDadosEntidadesENT_CELULAR: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_CELULAR'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 11
+    end
+    object qryDadosEntidadesENT_CEP: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_CEP'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 8
+    end
+    object qryDadosEntidadesENT_LOGRADOURO: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_LOGRADOURO'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object qryDadosEntidadesENT_COMPLEMENTO: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_COMPLEMENTO'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object qryDadosEntidadesENT_BAIRRO: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_BAIRRO'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object qryDadosEntidadesENT_UF: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_UF'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+    object qryDadosEntidadesENT_ORGAO: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_ORGAO'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 10
+    end
+    object qryDadosEntidadesZONA: TStringField
+      FieldKind = fkData
+      FieldName = 'ZONA'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosEntidadesENT_CELULAR2: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_CELULAR2'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 11
+    end
+    object qryDadosEntidadesENT_RESIDENTEDESDE: TDateField
+      FieldKind = fkData
+      FieldName = 'ENT_RESIDENTEDESDE'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosEntidadesID_UF: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_UF'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosEntidadesID_CIDADE: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_CIDADE'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosEntidadesIDUSER: TLongintField
+      FieldKind = fkData
+      FieldName = 'IDUSER'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosEntidadesENT_ORGAOUF: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_ORGAOUF'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+    object qryDadosEntidadesENT_CIDADE: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_CIDADE'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object qryDadosEntidadesENT_NUMERO: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_NUMERO'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 10
+    end
+    object qryDadosEntidadesENT_STATUS: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_STATUS'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 1
+    end
+    object qryDadosEntidadesENT_OBS: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_OBS'
+      Index = 21
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1000
+    end
+    object qryDadosEntidadesPRO_REDUZ_ISS: TStringField
+      FieldKind = fkData
+      FieldName = 'PRO_REDUZ_ISS'
+      Index = 22
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1
+    end
+    object qryDadosEntidadesENT_DT_CAD: TDateField
+      FieldKind = fkData
+      FieldName = 'ENT_DT_CAD'
+      Index = 23
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qryDadosEntidadesENT_COB_UF: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_COB_UF'
+      Index = 24
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+    object qryDadosEntidadesENT_TP_FISCAL: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_TP_FISCAL'
+      Index = 25
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 1
+    end
+    object qryDadosEntidadesENT_FANTASIA: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_FANTASIA'
+      Index = 26
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object qryDadosEntidadesENT_NAT_ENT: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_NAT_ENT'
+      Index = 27
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1
+    end
+    object qryDadosEntidadesENT_TIPO_ENT: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_TIPO_ENT'
+      Index = 28
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1
+    end
+    object qryDadosEntidadesENT_INSC_ESTADUAL: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_INSC_ESTADUAL'
+      Index = 29
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosEntidadesENT_INSC_MUNICIPAL_RG: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_INSC_MUNICIPAL_RG'
+      Index = 30
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosEntidadesENT_FAX: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_FAX'
+      Index = 31
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object qryDadosEntidadesENT_COB_CEP: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_COB_CEP'
+      Index = 32
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 8
+    end
+    object qryDadosEntidadesENT_COB_LOGRADOURO: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_COB_LOGRADOURO'
+      Index = 33
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object qryDadosEntidadesID_UF_EXP: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_UF_EXP'
+      Index = 34
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosEntidadesID_EST_CVL: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_EST_CVL'
+      Index = 35
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosEntidadesENT_DATA_NASC: TDateField
+      FieldKind = fkData
+      FieldName = 'ENT_DATA_NASC'
+      Index = 36
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosEntidadesENT_NOME_SOCIAL: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_NOME_SOCIAL'
+      Index = 37
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object qryDadosEntidadesENT_NOME_CUIDADOR_1: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_NOME_CUIDADOR_1'
+      Index = 38
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object qryDadosEntidadesENT_NOME_CUIDADOR_2: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_NOME_CUIDADOR_2'
+      Index = 39
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object qryDadosEntidadesPAR_COD: TLongintField
+      FieldKind = fkData
+      FieldName = 'PAR_COD'
+      Index = 40
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosEntidadesENT_CONJUGE: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_CONJUGE'
+      Index = 41
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+  end
+  object dsDadosEntidades: TDataSource
+    DataSet = qryDadosEntidades
+    left = 1048
+    top = 72
+  end
+  object qryConsultaColaborador: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'ENT_NOME'
+        DataType = ftString
+        Precision = -1
+        Size = 60
+      end    
+      item
+        Name = 'ENT_COD'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'ENT_CNPJ_CPF'
+        DataType = ftString
+        Precision = -1
+        Size = 14
+      end    
+      item
+        Name = 'ENT_FONE'
+        DataType = ftString
+        Precision = -1
+        Size = 15
+      end    
+      item
+        Name = 'ENT_CELULAR'
+        DataType = ftString
+        Precision = -1
+        Size = 11
+      end    
+      item
+        Name = 'ENT_CEP'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = 'ENT_LOGRADOURO'
+        DataType = ftString
+        Precision = -1
+        Size = 60
+      end    
+      item
+        Name = 'ENT_COMPLEMENTO'
+        DataType = ftString
+        Precision = -1
+        Size = 60
+      end    
+      item
+        Name = 'ENT_BAIRRO'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'ENT_UF'
+        DataType = ftString
+        Precision = -1
+        Size = 2
+      end    
+      item
+        Name = 'ENT_STATUS'
+        DataType = ftString
+        Precision = -1
+        Size = 1
+      end    
+      item
+        Name = 'ENT_ORGAO'
+        DataType = ftString
+        Precision = -1
+        Size = 10
+      end    
+      item
+        Name = 'ZONA'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'ENT_CELULAR2'
+        DataType = ftString
+        Precision = -1
+        Size = 11
+      end    
+      item
+        Name = 'ENT_RESIDENTEDESDE'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'ID_UF'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'ID_CIDADE'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'IDUSER'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'ENT_ORGAOUF'
+        DataType = ftString
+        Precision = -1
+        Size = 2
+      end    
+      item
+        Name = 'ENT_CIDADE'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'ENT_NUMERO'
+        DataType = ftString
+        Precision = -1
+        Size = 10
+      end    
+      item
+        Name = 'ENT_OBS'
+        DataType = ftString
+        Precision = -1
+        Size = 1000
+      end    
+      item
+        Name = 'ENT_BANCO1'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'PRO_REDUZ_ISS'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 1
+      end    
+      item
+        Name = 'ENT_DT_CAD'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'ENT_COB_UF'
+        DataType = ftString
+        Precision = -1
+        Size = 2
+      end    
+      item
+        Name = 'NF_EMPRESA'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'RC_TE_NUMERO'
+        DataType = ftString
+        Precision = -1
+        Size = 14
+      end    
+      item
+        Name = 'RC_TE_ZONA'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'RC_TE_SECAO'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'RC_CR_NUMERO'
+        DataType = ftString
+        Precision = -1
+        Size = 14
+      end    
+      item
+        Name = 'RC_CR_SERIE'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'RC_CR_CATEG'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'RC_MATRICULA'
+        DataType = ftString
+        Precision = -1
+        Size = 14
+      end    
+      item
+        Name = 'RC_CNH_NUMERO'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'RC_NUMERO_PIS'
+        DataType = ftString
+        Precision = -1
+        Size = 11
+      end    
+      item
+        Name = 'RC_NUM_DEPENDENTES'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'RC_CTPSNUMERO'
+        DataType = ftString
+        Precision = -1
+        Size = 14
+      end    
+      item
+        Name = 'RC_CTPSSERIE'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'RC_CTPSUF'
+        DataType = ftString
+        Precision = -1
+        Size = 2
+      end    
+      item
+        Name = 'RC_SITUACAO'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'RC_ALIQINSS'
+        DataType = ftBCD
+        Precision = 18
+        Size = 2
+      end    
+      item
+        Name = 'RC_ALIQIRRF'
+        DataType = ftBCD
+        Precision = 18
+        Size = 2
+      end    
+      item
+        Name = 'RC_ALIQFGTS'
+        DataType = ftBCD
+        Precision = 18
+        Size = 2
+      end    
+      item
+        Name = 'RC_ADMISSAO'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'RC_DEMISSAO'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'RC_DEMISSAOMOTIVO'
+        DataType = ftString
+        Precision = -1
+        Size = 900
+      end    
+      item
+        Name = 'RC_AVISOINI'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'RC_AVISOFIM'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'RC_AUXTRANSP'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 1
+      end    
+      item
+        Name = 'RC_ALIQTANSP'
+        DataType = ftBCD
+        Precision = 18
+        Size = 2
+      end    
+      item
+        Name = 'RC_COMISSAO'
+        DataType = ftBCD
+        Precision = 18
+        Size = 4
+      end    
+      item
+        Name = 'RC_AGENCIA'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'RC_CCORRENTE'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'RC_TP_CONTA'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'RC_ID'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'RC_NUM_DEPENDENTES_1'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'BAN_COD'
+        DataType = ftInteger
+        Precision = -1
+      end>
+    AfterScroll = qryConsultaColaboradorAfterScroll
+    Database = DM.sqlConectorDM
+    Transaction = DM.sqlTransactionDM
+    SQL.Strings = (
+      'select'
+      '    /*IDENTIFICAÇÃO*/'
+      '    ent.ent_nome, ent.ent_cod, ent.ent_cnpj_cpf, ent.ent_fone, ent.ent_celular,'
+      '    ent.ent_cep, ent.ent_logradouro, ent.ent_complemento, ent.ent_bairro,'
+      '    ent.ent_uf, ent.ent_status, ent.ent_orgao, ent.zona, ent.ent_celular2,'
+      '    ent.ent_residentedesde, ent.id_uf, ent.id_cidade, ent.iduser,'
+      '    ent.ent_orgaouf, ent.ent_cidade, ent.ent_numero,ent.ent_obs, ent.ent_banco1,'
+      '    ent.pro_reduz_iss, ent.ent_dt_cad, ent.ent_cob_uf,'
+      '    /*...*/'
+      '    rhcolab.nf_empresa, rhcolab.rc_te_numero, rhcolab.rc_te_zona,'
+      '    rhcolab.rc_te_secao, rhcolab.rc_cr_numero, rhcolab.rc_cr_serie,'
+      '    rhcolab.rc_cr_categ, rhcolab.rc_matricula, rhcolab.rc_cnh_numero,'
+      '    rhcolab.rc_numero_pis, rhcolab.rc_num_dependentes,rhcolab.rc_ctpsnumero,'
+      '    rhcolab.rc_ctpsserie, rhcolab.rc_ctpsuf,'
+      '    rhcolab.rc_situacao,'
+      ''
+      ''
+      '    /* FINANCEIRO*/'
+      '    rhcolab.rc_aliqinss, rhcolab.rc_aliqirrf, rhcolab.rc_aliqfgts,'
+      '    rhcolab.rc_admissao, rhcolab.rc_demissao, rhcolab.rc_demissaomotivo,'
+      '    rhcolab.rc_avisoini, rhcolab.rc_avisofim, rhcolab.rc_auxtransp,'
+      '    rhcolab.rc_aliqtansp, rhcolab.rc_comissao, rhcolab.rc_agencia,'
+      '    rhcolab.rc_ccorrente, rhcolab.rc_tp_conta, rhcolab.rc_id,'
+      '    rhcolab.rc_num_dependentes, rhcolab.ban_cod'
+      ''
+      ''
+      'from rh_colab rhcolab'
+      ''
+      'inner join entidades ent on rhcolab.ent_cod = ent.ent_cod'
+      'where ((rhcolab.ent_cod = :codColab) or (:codColab = 0))'
+      'and ((ent.ent_nome containing :nomeColab) or (:nomeColab = cast('''' as varchar(60))))'
+      'and ((ent.ent_cnpj_cpf containing :cpfColab) or (:cpfColab = cast('''' as varchar(14))))'
+    )
+    Params = <    
+      item
+        DataType = ftInteger
+        Name = 'codColab'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftString
+        Name = 'nomeColab'
+        ParamType = ptInput
+      end    
+      item
+        DataType = ftString
+        Name = 'cpfColab'
+        ParamType = ptInput
+      end>
+    left = 919
+    top = 16
+    object qryConsultaColaboradorENT_NOME: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_NOME'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 60
+    end
+    object qryConsultaColaboradorENT_COD: TLongintField
+      FieldKind = fkData
+      FieldName = 'ENT_COD'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qryConsultaColaboradorENT_CNPJ_CPF: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_CNPJ_CPF'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 14
+    end
+    object qryConsultaColaboradorENT_FONE: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_FONE'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object qryConsultaColaboradorENT_CELULAR: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_CELULAR'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 11
+    end
+    object qryConsultaColaboradorENT_CEP: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_CEP'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 8
+    end
+    object qryConsultaColaboradorENT_LOGRADOURO: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_LOGRADOURO'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object qryConsultaColaboradorENT_COMPLEMENTO: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_COMPLEMENTO'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object qryConsultaColaboradorENT_BAIRRO: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_BAIRRO'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object qryConsultaColaboradorENT_UF: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_UF'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+    object qryConsultaColaboradorENT_STATUS: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_STATUS'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 1
+    end
+    object qryConsultaColaboradorENT_ORGAO: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_ORGAO'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 10
+    end
+    object qryConsultaColaboradorZONA: TStringField
+      FieldKind = fkData
+      FieldName = 'ZONA'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryConsultaColaboradorENT_CELULAR2: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_CELULAR2'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 11
+    end
+    object qryConsultaColaboradorENT_RESIDENTEDESDE: TDateField
+      FieldKind = fkData
+      FieldName = 'ENT_RESIDENTEDESDE'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryConsultaColaboradorID_UF: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_UF'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryConsultaColaboradorID_CIDADE: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_CIDADE'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryConsultaColaboradorIDUSER: TLongintField
+      FieldKind = fkData
+      FieldName = 'IDUSER'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryConsultaColaboradorENT_ORGAOUF: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_ORGAOUF'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+    object qryConsultaColaboradorENT_CIDADE: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_CIDADE'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object qryConsultaColaboradorENT_NUMERO: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_NUMERO'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 10
+    end
+    object qryConsultaColaboradorENT_OBS: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_OBS'
+      Index = 21
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1000
+    end
+    object qryConsultaColaboradorENT_BANCO1: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_BANCO1'
+      Index = 22
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object qryConsultaColaboradorPRO_REDUZ_ISS: TStringField
+      FieldKind = fkData
+      FieldName = 'PRO_REDUZ_ISS'
+      Index = 23
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1
+    end
+    object qryConsultaColaboradorENT_DT_CAD: TDateField
+      FieldKind = fkData
+      FieldName = 'ENT_DT_CAD'
+      Index = 24
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qryConsultaColaboradorENT_COB_UF: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_COB_UF'
+      Index = 25
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+    object qryConsultaColaboradorNF_EMPRESA: TLongintField
+      FieldKind = fkData
+      FieldName = 'NF_EMPRESA'
+      Index = 26
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryConsultaColaboradorRC_TE_NUMERO: TStringField
+      FieldKind = fkData
+      FieldName = 'RC_TE_NUMERO'
+      Index = 27
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 14
+    end
+    object qryConsultaColaboradorRC_TE_ZONA: TLongintField
+      FieldKind = fkData
+      FieldName = 'RC_TE_ZONA'
+      Index = 28
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryConsultaColaboradorRC_TE_SECAO: TLongintField
+      FieldKind = fkData
+      FieldName = 'RC_TE_SECAO'
+      Index = 29
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryConsultaColaboradorRC_CR_NUMERO: TStringField
+      FieldKind = fkData
+      FieldName = 'RC_CR_NUMERO'
+      Index = 30
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 14
+    end
+    object qryConsultaColaboradorRC_CR_SERIE: TLongintField
+      FieldKind = fkData
+      FieldName = 'RC_CR_SERIE'
+      Index = 31
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryConsultaColaboradorRC_CR_CATEG: TLongintField
+      FieldKind = fkData
+      FieldName = 'RC_CR_CATEG'
+      Index = 32
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryConsultaColaboradorRC_MATRICULA: TStringField
+      FieldKind = fkData
+      FieldName = 'RC_MATRICULA'
+      Index = 33
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 14
+    end
+    object qryConsultaColaboradorRC_CNH_NUMERO: TLongintField
+      FieldKind = fkData
+      FieldName = 'RC_CNH_NUMERO'
+      Index = 34
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryConsultaColaboradorRC_NUMERO_PIS: TStringField
+      FieldKind = fkData
+      FieldName = 'RC_NUMERO_PIS'
+      Index = 35
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 11
+    end
+    object qryConsultaColaboradorRC_NUM_DEPENDENTES: TLongintField
+      FieldKind = fkData
+      FieldName = 'RC_NUM_DEPENDENTES'
+      Index = 36
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryConsultaColaboradorRC_CTPSNUMERO: TStringField
+      FieldKind = fkData
+      FieldName = 'RC_CTPSNUMERO'
+      Index = 37
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 14
+    end
+    object qryConsultaColaboradorRC_CTPSSERIE: TLongintField
+      FieldKind = fkData
+      FieldName = 'RC_CTPSSERIE'
+      Index = 38
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryConsultaColaboradorRC_CTPSUF: TStringField
+      FieldKind = fkData
+      FieldName = 'RC_CTPSUF'
+      Index = 39
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+    object qryConsultaColaboradorRC_SITUACAO: TLongintField
+      FieldKind = fkData
+      FieldName = 'RC_SITUACAO'
+      Index = 40
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryConsultaColaboradorRC_ALIQINSS: TBCDField
+      FieldKind = fkData
+      FieldName = 'RC_ALIQINSS'
+      Index = 41
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 18
+      Currency = False
+      MaxValue = 0
+      MinValue = 0
+      Size = 2
+    end
+    object qryConsultaColaboradorRC_ALIQIRRF: TBCDField
+      FieldKind = fkData
+      FieldName = 'RC_ALIQIRRF'
+      Index = 42
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 18
+      Currency = False
+      MaxValue = 0
+      MinValue = 0
+      Size = 2
+    end
+    object qryConsultaColaboradorRC_ALIQFGTS: TBCDField
+      FieldKind = fkData
+      FieldName = 'RC_ALIQFGTS'
+      Index = 43
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 18
+      Currency = False
+      MaxValue = 0
+      MinValue = 0
+      Size = 2
+    end
+    object qryConsultaColaboradorRC_ADMISSAO: TDateField
+      FieldKind = fkData
+      FieldName = 'RC_ADMISSAO'
+      Index = 44
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryConsultaColaboradorRC_DEMISSAO: TDateField
+      FieldKind = fkData
+      FieldName = 'RC_DEMISSAO'
+      Index = 45
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryConsultaColaboradorRC_DEMISSAOMOTIVO: TStringField
+      FieldKind = fkData
+      FieldName = 'RC_DEMISSAOMOTIVO'
+      Index = 46
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 900
+    end
+    object qryConsultaColaboradorRC_AVISOINI: TDateField
+      FieldKind = fkData
+      FieldName = 'RC_AVISOINI'
+      Index = 47
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryConsultaColaboradorRC_AVISOFIM: TDateField
+      FieldKind = fkData
+      FieldName = 'RC_AVISOFIM'
+      Index = 48
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryConsultaColaboradorRC_AUXTRANSP: TStringField
+      FieldKind = fkData
+      FieldName = 'RC_AUXTRANSP'
+      Index = 49
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1
+    end
+    object qryConsultaColaboradorRC_ALIQTANSP: TBCDField
+      FieldKind = fkData
+      FieldName = 'RC_ALIQTANSP'
+      Index = 50
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 18
+      Currency = False
+      MaxValue = 0
+      MinValue = 0
+      Size = 2
+    end
+    object qryConsultaColaboradorRC_COMISSAO: TBCDField
+      FieldKind = fkData
+      FieldName = 'RC_COMISSAO'
+      Index = 51
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 18
+      Currency = False
+      MaxValue = 0
+      MinValue = 0
+    end
+    object qryConsultaColaboradorRC_AGENCIA: TLongintField
+      FieldKind = fkData
+      FieldName = 'RC_AGENCIA'
+      Index = 52
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryConsultaColaboradorRC_CCORRENTE: TLongintField
+      FieldKind = fkData
+      FieldName = 'RC_CCORRENTE'
+      Index = 53
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryConsultaColaboradorRC_TP_CONTA: TLongintField
+      FieldKind = fkData
+      FieldName = 'RC_TP_CONTA'
+      Index = 54
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryConsultaColaboradorRC_ID: TLongintField
+      FieldKind = fkData
+      FieldName = 'RC_ID'
+      Index = 55
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qryConsultaColaboradorBAN_COD: TLongintField
+      FieldKind = fkData
+      FieldName = 'BAN_COD'
+      Index = 56
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object dsConsultaColaborador: TDataSource
+    DataSet = qryConsultaColaborador
+    left = 919
+    top = 72
+  end
+  object dsDadosFinanceiros: TDataSource
+    DataSet = qryDadosFinanceiros
+    left = 917
+    top = 526
+  end
+  object qryDadosFinanceiros: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'RC_ID'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'RCS_ID'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'RCS_DATAREG'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'RCS_INFOMATIVO'
+        DataType = ftString
+        Precision = -1
+        Size = 40
+      end    
+      item
+        Name = 'RCS_VALOR'
+        DataType = ftBCD
+        Precision = 18
+        Size = 2
+      end    
+      item
+        Name = 'RCS_MOTIVO'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'RCC_ID'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'RC_ID_1'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'RCC_CARGO'
+        DataType = ftString
+        Precision = -1
+        Size = 40
+      end    
+      item
+        Name = 'RCC_DEPARTAMENTO'
+        DataType = ftString
+        Precision = -1
+        Size = 40
+      end    
+      item
+        Name = 'RCC_DATAREG'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'ID_MD5'
+        DataType = ftString
+        Precision = -1
+        Size = 32
+      end>
+    OnNewRecord = qryDadosFinanceirosNewRecord
+    Database = DM.sqlConectorDM
+    Transaction = DM.sqlTransactionDM
+    SQL.Strings = (
+      'select'
+      'sal.rc_id, sal.rcs_id, sal.rcs_datareg, sal.rcs_infomativo, sal.rcs_valor,'
+      'sal.rcs_motivo,'
+      'rhcargo.rcc_id, rhcargo.rc_id, rhcargo.rcc_cargo, rhcargo.rcc_departamento,'
+      'rhcargo.rcc_datareg, rhcargo.id_md5'
+      ''
+      ' from rh_colab_salario sal'
+      ' inner join rh_colab_cargo rhcargo on rhcargo.rc_id = sal.rc_id'
+      ' where sal.rc_id = :rcid'
+      ''
+    )
+    UpdateSQL.Strings = (
+      'update RH_COLAB_SALARIO'
+      'set RCS_DATAREG = :RCS_DATAREG,'
+      '    RCS_INFOMATIVO = :RCS_INFOMATIVO,'
+      '    RCS_VALOR = :RCS_VALOR,'
+      '    RCS_MOTIVO = :RCS_MOTIVO,'
+      '    ID_MD5 = :ID_MD5'
+      'where (RC_ID = :RC_ID) and'
+      '      (RCS_ID = :RCS_ID)'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'rcid'
+        ParamType = ptInput
+      end>
+    left = 917
+    top = 476
+    object qryDadosFinanceirosRCC_DATAREG: TDateField
+      DisplayLabel = 'DATA'
+      FieldKind = fkData
+      FieldName = 'RCC_DATAREG'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosFinanceirosRCC_CARGO: TStringField
+      DisplayLabel = 'Função'
+      DisplayWidth = 30
+      FieldKind = fkData
+      FieldName = 'RCC_CARGO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object qryDadosFinanceirosRCC_DEPARTAMENTO: TStringField
+      DisplayLabel = 'Departamento'
+      DisplayWidth = 30
+      FieldKind = fkData
+      FieldName = 'RCC_DEPARTAMENTO'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object qryDadosFinanceirosRCS_VALOR: TBCDField
+      Alignment = taLeftJustify
+      DisplayLabel = 'Salario'
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'RCS_VALOR'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 18
+      Currency = False
+      MaxValue = 0
+      MinValue = 0
+      Size = 2
+    end
+    object qryDadosFinanceirosRCS_MOTIVO: TStringField
+      DisplayLabel = 'Motivo'
+      FieldKind = fkData
+      FieldName = 'RCS_MOTIVO'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object qryDadosFinanceirosRC_ID: TLongintField
+      FieldKind = fkData
+      FieldName = 'RC_ID'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      ReadOnly = False
+      Required = True
+      Visible = False
+    end
+    object qryDadosFinanceirosRCS_ID: TLongintField
+      FieldKind = fkData
+      FieldName = 'RCS_ID'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      ReadOnly = False
+      Required = True
+      Visible = False
+    end
+    object qryDadosFinanceirosRCS_DATAREG: TDateField
+      FieldKind = fkData
+      FieldName = 'RCS_DATAREG'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object qryDadosFinanceirosRCS_INFOMATIVO: TStringField
+      FieldKind = fkData
+      FieldName = 'RCS_INFOMATIVO'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      Size = 40
+    end
+    object qryDadosFinanceirosRCC_ID: TLongintField
+      FieldKind = fkData
+      FieldName = 'RCC_ID'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Visible = False
+    end
+    object qryDadosFinanceirosID_MD5: TStringField
+      FieldKind = fkData
+      FieldName = 'ID_MD5'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+      Size = 32
+    end
+  end
+  object qryEstadoCivil: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'ID_EST_CVL'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'DESCRICAO_EST_CVL'
+        DataType = ftString
+        Precision = -1
+        Size = 100
+      end>
+    Database = DM.sqlConectorDM
+    Transaction = DM.sqlTransactionDM
+    SQL.Strings = (
+      'select estc.id_est_cvl, estc.descricao_est_cvl from estado_civil estc'
+    )
+    Params = <>
+    left = 1082
+    top = 183
+    object qryEstadoCivilID_EST_CVL: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_EST_CVL'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qryEstadoCivilDESCRICAO_EST_CVL: TStringField
+      FieldKind = fkData
+      FieldName = 'DESCRICAO_EST_CVL'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+  end
+  object dsEstadoCivil: TDataSource
+    DataSet = qryEstadoCivil
+    left = 1084
+    top = 231
+  end
+  object qryMotivo: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'ID'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 1
+      end    
+      item
+        Name = 'MOTIVO'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 41
+      end>
+    Database = DM.sqlConectorDM
+    Transaction = DM.sqlTransactionDM
+    SQL.Strings = (
+      'select ''1'' as id, ''1 - Demissão por justa causa'' as Motivo from RDB$DATABASE'
+      'union all'
+      'select ''2'' as id, ''2 - Demissão sem justa causa'' as Motivo from RDB$DATABASE'
+      'union all'
+      'select ''3'' as id, ''3 - Pedido de demissão pelo funcionário'' as Motivo from RDB$DATABASE'
+      'union all'
+      'select ''4'' as id, ''4 - Acordo entre as partes'' as Motivo from RDB$DATABASE'
+      'union all'
+      'select ''5'' as id, ''5 - Demissão consensual'' as Motivo from RDB$DATABASE'
+      ''
+      ''
+    )
+    Params = <>
+    left = 1176
+    top = 476
+    object qryMotivoID: TStringField
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 1
+    end
+    object qryMotivoMOTIVO: TStringField
+      FieldKind = fkData
+      FieldName = 'MOTIVO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 41
+    end
+  end
+  object dsMotivo: TDataSource
+    DataSet = qryMotivo
+    left = 1176
+    top = 527
+  end
+  object qryDadosRHColab: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'NF_EMPRESA'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'RC_TE_NUMERO'
+        DataType = ftString
+        Precision = -1
+        Size = 14
+      end    
+      item
+        Name = 'RC_TE_ZONA'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'RC_TE_SECAO'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'RC_CR_NUMERO'
+        DataType = ftString
+        Precision = -1
+        Size = 14
+      end    
+      item
+        Name = 'RC_CR_SERIE'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'RC_CR_CATEG'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'RC_MATRICULA'
+        DataType = ftString
+        Precision = -1
+        Size = 14
+      end    
+      item
+        Name = 'RC_CNH_NUMERO'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'RC_NUMERO_PIS'
+        DataType = ftString
+        Precision = -1
+        Size = 11
+      end    
+      item
+        Name = 'RC_NUM_DEPENDENTES'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'RC_CTPSNUMERO'
+        DataType = ftString
+        Precision = -1
+        Size = 14
+      end    
+      item
+        Name = 'RC_CTPSSERIE'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'RC_CTPSUF'
+        DataType = ftString
+        Precision = -1
+        Size = 2
+      end    
+      item
+        Name = 'ENT_COD'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'ENT_NOME'
+        DataType = ftString
+        Precision = -1
+        Size = 60
+      end    
+      item
+        Name = 'RC_ALIQINSS'
+        DataType = ftBCD
+        Precision = 18
+        Size = 2
+      end    
+      item
+        Name = 'RC_ALIQIRRF'
+        DataType = ftBCD
+        Precision = 18
+        Size = 2
+      end    
+      item
+        Name = 'RC_ALIQFGTS'
+        DataType = ftBCD
+        Precision = 18
+        Size = 2
+      end    
+      item
+        Name = 'RC_ADMISSAO'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'RC_DEMISSAO'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'RC_DEMISSAOMOTIVO'
+        DataType = ftString
+        Precision = -1
+        Size = 900
+      end    
+      item
+        Name = 'RC_AVISOINI'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'RC_AVISOFIM'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'RC_AUXTRANSP'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 1
+      end    
+      item
+        Name = 'RC_ALIQTANSP'
+        DataType = ftBCD
+        Precision = 18
+        Size = 2
+      end    
+      item
+        Name = 'RC_COMISSAO'
+        DataType = ftBCD
+        Precision = 18
+        Size = 4
+      end    
+      item
+        Name = 'RC_AGENCIA'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'RC_CCORRENTE'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'RC_TP_CONTA'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'BAN_COD'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'RC_ID'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'RC_SITUACAO'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'RC_CAT_CNH'
+        DataType = ftString
+        Precision = -1
+        Size = 3
+      end    
+      item
+        Name = 'RC_BAN_COD_P'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'RC_NOME_BANCO_P'
+        DataType = ftString
+        Precision = -1
+        Size = 60
+      end    
+      item
+        Name = 'RC_AGENCIA_P'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'RC_NOME_SOCIAL'
+        DataType = ftString
+        Precision = -1
+        Size = 60
+      end    
+      item
+        Name = 'RCC_ID'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'RCC_CARGO'
+        DataType = ftString
+        Precision = -1
+        Size = 40
+      end    
+      item
+        Name = 'RCC_DEPARTAMENTO'
+        DataType = ftString
+        Precision = -1
+        Size = 40
+      end    
+      item
+        Name = 'RCC_DATAREG'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'ID_DEPARTAMENTO'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'DESCRICAO_DEPARTAMENTO'
+        DataType = ftString
+        Precision = -1
+        Size = 60
+      end>
+    AfterOpen = qryDadosRHColabAfterOpen
+    OnNewRecord = qryDadosRHColabNewRecord
+    Database = DM.sqlConectorDM
+    Transaction = DM.sqlTransactionDM
+    SQL.Strings = (
+      'select'
+      '    /*IDENTIFICAÇÃO*/'
+      '    rhcolab.nf_empresa, rhcolab.rc_te_numero, rhcolab.rc_te_zona,'
+      '    rhcolab.rc_te_secao, rhcolab.rc_cr_numero, rhcolab.rc_cr_serie,'
+      '    rhcolab.rc_cr_categ, rhcolab.rc_matricula, rhcolab.rc_cnh_numero,'
+      '    rhcolab.rc_numero_pis, rhcolab.rc_num_dependentes,'
+      '    rhcolab.rc_ctpsnumero, rhcolab.rc_ctpsserie, rhcolab.rc_ctpsuf,'
+      '    rhcolab.ent_cod, ent.ent_nome,'
+      ''
+      '    /* FINANCEIRO*/'
+      '    rhcolab.rc_aliqinss, rhcolab.rc_aliqirrf, rhcolab.rc_aliqfgts,'
+      '    rhcolab.rc_admissao, rhcolab.rc_demissao, rhcolab.rc_demissaomotivo,'
+      '    rhcolab.rc_avisoini, rhcolab.rc_avisofim, rhcolab.rc_auxtransp,'
+      '    rhcolab.rc_aliqtansp, rhcolab.rc_comissao, rhcolab.rc_agencia,'
+      '    rhcolab.rc_ccorrente, rhcolab.rc_tp_conta,rhcolab.ban_cod, rhcolab.rc_id,'
+      '    rhcolab.rc_situacao, rhcolab.rc_cat_cnh, rhcolab.rc_ban_cod_p,'
+      '    rhcolab.rc_nome_banco_p, rhcolab.rc_agencia_p,  rhcolab.rc_nome_social,'
+      ''
+      '    /*IDENTIFICAÇÃO*/'
+      '    rhcargo.rcc_id, rhcargo.rcc_cargo, rhcargo.rcc_departamento,'
+      '    rhcargo.rcc_datareg,'
+      '   -- rhf.rcf_foto'
+      ''
+      '   /*tabela de departamento*/'
+      '   depart.id_departamento, depart.descricao_departamento'
+      ''
+      'from rh_colab rhcolab'
+      'left join bancos banc on banc.ban_cod = rhcolab.ban_cod'
+      'left join entidades ent on ent.ent_cod = banc.ent_cod'
+      'left join rh_colab_cargo rhcargo on rhcargo.rc_id = rhcolab.rc_id'
+      'left join rh_colab_foto rhf on rhf.rc_id = rhcolab.rc_id'
+      'left join departamentos depart on depart.id_departamento = rhcolab.id_departamento'
+      'where rhcolab.ent_cod = :ent_cod'
+    )
+    UpdateSQL.Strings = (
+      ''
+    )
+    Params = <    
+      item
+        DataType = ftInteger
+        Name = 'ent_cod'
+        ParamType = ptInput
+      end>
+    left = 1160
+    top = 16
+    object qryDadosRHColabNF_EMPRESA: TLongintField
+      FieldKind = fkData
+      FieldName = 'NF_EMPRESA'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosRHColabRC_TE_NUMERO: TStringField
+      FieldKind = fkData
+      FieldName = 'RC_TE_NUMERO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 14
+    end
+    object qryDadosRHColabRC_TE_ZONA: TLongintField
+      FieldKind = fkData
+      FieldName = 'RC_TE_ZONA'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosRHColabRC_TE_SECAO: TLongintField
+      FieldKind = fkData
+      FieldName = 'RC_TE_SECAO'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosRHColabRC_CR_NUMERO: TStringField
+      FieldKind = fkData
+      FieldName = 'RC_CR_NUMERO'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 14
+    end
+    object qryDadosRHColabRC_CR_SERIE: TLongintField
+      FieldKind = fkData
+      FieldName = 'RC_CR_SERIE'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosRHColabRC_CR_CATEG: TLongintField
+      FieldKind = fkData
+      FieldName = 'RC_CR_CATEG'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosRHColabRC_MATRICULA: TStringField
+      FieldKind = fkData
+      FieldName = 'RC_MATRICULA'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 14
+    end
+    object qryDadosRHColabRC_CNH_NUMERO: TLongintField
+      FieldKind = fkData
+      FieldName = 'RC_CNH_NUMERO'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosRHColabRC_NUMERO_PIS: TStringField
+      FieldKind = fkData
+      FieldName = 'RC_NUMERO_PIS'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 11
+    end
+    object qryDadosRHColabRC_NUM_DEPENDENTES: TLongintField
+      FieldKind = fkData
+      FieldName = 'RC_NUM_DEPENDENTES'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosRHColabRC_CTPSNUMERO: TStringField
+      FieldKind = fkData
+      FieldName = 'RC_CTPSNUMERO'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 14
+    end
+    object qryDadosRHColabRC_CTPSSERIE: TLongintField
+      FieldKind = fkData
+      FieldName = 'RC_CTPSSERIE'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosRHColabRC_CTPSUF: TStringField
+      FieldKind = fkData
+      FieldName = 'RC_CTPSUF'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+    object qryDadosRHColabENT_COD: TLongintField
+      FieldKind = fkData
+      FieldName = 'ENT_COD'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosRHColabENT_NOME: TStringField
+      FieldKind = fkData
+      FieldName = 'ENT_NOME'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = []
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object qryDadosRHColabRC_ALIQINSS: TBCDField
+      FieldKind = fkData
+      FieldName = 'RC_ALIQINSS'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 18
+      Currency = False
+      MaxValue = 0
+      MinValue = 0
+      Size = 2
+    end
+    object qryDadosRHColabRC_ALIQIRRF: TBCDField
+      FieldKind = fkData
+      FieldName = 'RC_ALIQIRRF'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 18
+      Currency = False
+      MaxValue = 0
+      MinValue = 0
+      Size = 2
+    end
+    object qryDadosRHColabRC_ALIQFGTS: TBCDField
+      FieldKind = fkData
+      FieldName = 'RC_ALIQFGTS'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 18
+      Currency = False
+      MaxValue = 0
+      MinValue = 0
+      Size = 2
+    end
+    object qryDadosRHColabRC_ADMISSAO: TDateField
+      FieldKind = fkData
+      FieldName = 'RC_ADMISSAO'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosRHColabRC_DEMISSAO: TDateField
+      FieldKind = fkData
+      FieldName = 'RC_DEMISSAO'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosRHColabRC_DEMISSAOMOTIVO: TStringField
+      FieldKind = fkData
+      FieldName = 'RC_DEMISSAOMOTIVO'
+      Index = 21
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 900
+    end
+    object qryDadosRHColabRC_AVISOINI: TDateField
+      FieldKind = fkData
+      FieldName = 'RC_AVISOINI'
+      Index = 22
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosRHColabRC_AVISOFIM: TDateField
+      FieldKind = fkData
+      FieldName = 'RC_AVISOFIM'
+      Index = 23
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosRHColabRC_AUXTRANSP: TStringField
+      FieldKind = fkData
+      FieldName = 'RC_AUXTRANSP'
+      Index = 24
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1
+    end
+    object qryDadosRHColabRC_ALIQTANSP: TBCDField
+      FieldKind = fkData
+      FieldName = 'RC_ALIQTANSP'
+      Index = 25
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 18
+      Currency = False
+      MaxValue = 0
+      MinValue = 0
+      Size = 2
+    end
+    object qryDadosRHColabRC_COMISSAO: TBCDField
+      FieldKind = fkData
+      FieldName = 'RC_COMISSAO'
+      Index = 26
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 18
+      Currency = False
+      MaxValue = 0
+      MinValue = 0
+    end
+    object qryDadosRHColabRC_AGENCIA: TLongintField
+      FieldKind = fkData
+      FieldName = 'RC_AGENCIA'
+      Index = 27
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosRHColabRC_CCORRENTE: TLongintField
+      FieldKind = fkData
+      FieldName = 'RC_CCORRENTE'
+      Index = 28
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosRHColabRC_TP_CONTA: TLongintField
+      FieldKind = fkData
+      FieldName = 'RC_TP_CONTA'
+      Index = 29
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosRHColabBAN_COD: TLongintField
+      FieldKind = fkData
+      FieldName = 'BAN_COD'
+      Index = 30
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnValidate = qryDadosRHColabBAN_CODValidate
+    end
+    object qryDadosRHColabRC_ID: TLongintField
+      FieldKind = fkData
+      FieldName = 'RC_ID'
+      Index = 31
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      ReadOnly = False
+      Required = True
+    end
+    object qryDadosRHColabRC_SITUACAO: TLongintField
+      FieldKind = fkData
+      FieldName = 'RC_SITUACAO'
+      Index = 32
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosRHColabRC_CAT_CNH: TLongintField
+      FieldKind = fkData
+      FieldName = 'RC_CAT_CNH'
+      Index = 33
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosRHColabRCC_ID: TLongintField
+      FieldKind = fkData
+      FieldName = 'RCC_ID'
+      Index = 34
+      LookupCache = False
+      ProviderFlags = []
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosRHColabRCC_CARGO: TStringField
+      FieldKind = fkData
+      FieldName = 'RCC_CARGO'
+      Index = 35
+      LookupCache = False
+      ProviderFlags = []
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object qryDadosRHColabRCC_DEPARTAMENTO: TStringField
+      FieldKind = fkData
+      FieldName = 'RCC_DEPARTAMENTO'
+      Index = 36
+      LookupCache = False
+      ProviderFlags = []
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object qryDadosRHColabRCC_DATAREG: TDateField
+      FieldKind = fkData
+      FieldName = 'RCC_DATAREG'
+      Index = 37
+      LookupCache = False
+      ProviderFlags = []
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosRHColabRC_BAN_COD_P: TLongintField
+      FieldKind = fkData
+      FieldName = 'RC_BAN_COD_P'
+      Index = 38
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnValidate = qryDadosRHColabRC_BAN_COD_PValidate
+    end
+    object qryDadosRHColabRC_NOME_BANCO_P: TStringField
+      FieldKind = fkData
+      FieldName = 'RC_NOME_BANCO_P'
+      Index = 39
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object qryDadosRHColabRC_AGENCIA_P: TStringField
+      FieldKind = fkData
+      FieldName = 'RC_AGENCIA_P'
+      Index = 40
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+    object qryDadosRHColabID_DEPARTAMENTO: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_DEPARTAMENTO'
+      Index = 41
+      LookupCache = False
+      ProviderFlags = []
+      ReadOnly = False
+      Required = False
+    end
+    object qryDadosRHColabDESCRICAO_DEPARTAMENTO: TStringField
+      FieldKind = fkData
+      FieldName = 'DESCRICAO_DEPARTAMENTO'
+      Index = 42
+      LookupCache = False
+      ProviderFlags = []
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object qryDadosRHColabRC_NOME_SOCIAL: TStringField
+      FieldKind = fkData
+      FieldName = 'RC_NOME_SOCIAL'
+      Index = 43
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+  end
+  object dsDadosRHColab: TDataSource
+    DataSet = qryDadosRHColab
+    left = 1160
+    top = 72
+  end
+  object ACBrCEP1: TACBrCEP
+    ProxyPort = '8080'
+    WebService = wsRepublicaVirtual
+    PesquisarIBGE = True
+    OnBuscaEfetuada = ACBrCEP1BuscaEfetuada
+    left = 872
+    top = 184
+  end
+  object qryEndeZona: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'ID'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 1
+      end    
+      item
+        Name = 'ENDERECO'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 6
+      end>
+    Database = DM.sqlConectorDM
+    Transaction = DM.sqlTransactionDM
+    SQL.Strings = (
+      'select ''1'' as id, ''Rural'' as endereco from RDB$DATABASE'
+      'union all'
+      'select ''2'' as id, ''Urbana'' as endereco from RDB$DATABASE'
+    )
+    Params = <>
+    left = 1040
+    top = 476
+    object qryEndeZonaID: TStringField
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 1
+    end
+    object qryEndeZonaENDERECO: TStringField
+      FieldKind = fkData
+      FieldName = 'ENDERECO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 6
+    end
+  end
+  object dsEndeZona: TDataSource
+    AutoEdit = False
+    DataSet = qryEndeZona
+    left = 1040
+    top = 527
+  end
+  object qryUFIdent: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'ID_UF'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'SIGLA'
+        DataType = ftString
+        Precision = -1
+        Size = 2
+      end>
+    Database = DM.sqlConectorDM
+    Transaction = DM.sqlTransactionDM
+    SQL.Strings = (
+      'select uff.id_uf, uff.sigla from uf uff'
+      ''
+    )
+    Params = <>
+    left = 1040
+    top = 330
+    object qryUFIdentificacaoID_UF: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_UF'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qryUFIdentificacaoSIGLA: TStringField
+      FieldKind = fkData
+      FieldName = 'SIGLA'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+  end
+  object dsUFIdent: TDataSource
+    DataSet = qryUFIdent
+    left = 1040
+    top = 379
+  end
+  object qryCategoriaCH: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'ID'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 1
+      end    
+      item
+        Name = 'CNH'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 12
+      end>
+    Database = DM.sqlConectorDM
+    Transaction = DM.sqlTransactionDM
+    SQL.Strings = (
+      'select ''1'' as id, ''Categoria A'' as CNH from RDB$DATABASE'
+      'union all'
+      'select ''2'' as id, ''Categoria AB'' as CNH from RDB$DATABASE'
+      'union all'
+      'select ''3'' as id, ''Categoria B'' as CNH from RDB$DATABASE'
+      'union all'
+      'select ''4'' as id, ''Categoria C'' as CNH from RDB$DATABASE'
+      'union all'
+      'select ''5'' as id, ''Categoria D'' as CNH from RDB$DATABASE'
+      'union all'
+      'select ''5'' as id, ''Categoria E'' as CNH from RDB$DATABASE'
+    )
+    Params = <>
+    left = 1176
+    top = 183
+    object qryCategoriaCHID: TStringField
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 1
+    end
+    object qryCategoriaCHCNH: TStringField
+      FieldKind = fkData
+      FieldName = 'CNH'
+      Index = 1
+      LookupCache = False
+      LookupDataSet = qryCategoriaCH
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 12
+    end
+  end
+  object dsCategoriaCH: TDataSource
+    DataSet = qryCategoriaCH
+    left = 1176
+    top = 231
+  end
+  object qryCidade: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'NOME_CIDADE'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'ID_CIDADE'
+        DataType = ftInteger
+        Precision = -1
+      end>
+    Database = DM.sqlConectorDM
+    Transaction = DM.sqlTransactionDM
+    SQL.Strings = (
+      'select cidd.nome_cidade, cidd.id_cidade from cidades cidd'
+      'where ((cidd.id_uf = :idUF) or (:idUF = 0))'
+      'order by nome_cidade'
+    )
+    Params = <    
+      item
+        DataType = ftInteger
+        Name = 'idUF'
+        ParamType = ptInput
+      end>
+    left = 1112
+    top = 330
+    object qryCidadeNOME_CIDADE: TStringField
+      FieldKind = fkData
+      FieldName = 'NOME_CIDADE'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object qryCidadeID_CIDADE: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_CIDADE'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+  end
+  object qryBairro: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'BAI_DESCRICAO'
+        DataType = ftString
+        Precision = -1
+        Size = 40
+      end    
+      item
+        Name = 'BAI_COD'
+        DataType = ftInteger
+        Precision = -1
+      end>
+    Database = DM.sqlConectorDM
+    Transaction = DM.sqlTransactionDM
+    SQL.Strings = (
+      'select brr.bai_descricao, brr.bai_cod from bairro brr'
+      'where ((brr.cid_cod = :codCid) or (:codCid = 0))'
+      'order by bai_descricao'
+      ''
+      ''
+      ''
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'codCid'
+        ParamType = ptInput
+      end>
+    left = 1176
+    top = 330
+    object qryBairroBAI_DESCRICAO: TStringField
+      DisplayWidth = 30
+      FieldKind = fkData
+      FieldName = 'BAI_DESCRICAO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object qryBairroBAI_COD: TLongintField
+      FieldKind = fkData
+      FieldName = 'BAI_COD'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+  end
+  object dsCidade: TDataSource
+    DataSet = qryCidade
+    left = 1112
+    top = 379
+  end
+  object dsBairro: TDataSource
+    DataSet = qryBairro
+    left = 1176
+    top = 379
+  end
+  object qryStatus: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'ID'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 1
+      end    
+      item
+        Name = 'STATUS'
+        DataType = ftFixedChar
+        Precision = -1
+        Size = 7
+      end>
+    Database = DM.sqlConectorDM
+    Transaction = DM.sqlTransactionDM
+    SQL.Strings = (
+      'select ''1'' as id, ''Ativo'' as status from RDB$DATABASE'
+      'union all'
+      'select ''4'' as id, ''Inativo'' as status from RDB$DATABASE'
+      ''
+    )
+    Params = <>
+    left = 1112
+    top = 476
+    object qryStatusID: TStringField
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 1
+    end
+    object qryStatusSTATUS: TStringField
+      FieldKind = fkData
+      FieldName = 'STATUS'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 7
+    end
+  end
+  object dsStatus: TDataSource
+    DataSet = qryStatus
+    left = 1112
+    top = 527
+  end
+  object qryExpedicao: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'UF_COD'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'UF_REDUZIDO'
+        DataType = ftString
+        Precision = -1
+        Size = 2
+      end>
+    Database = DM.sqlConectorDM
+    Transaction = DM.sqlTransactionDM
+    SQL.Strings = (
+      'select e.uf_cod, e.uf_reduzido from uf e'
+    )
+    Params = <>
+    left = 1001
+    top = 183
+    object qryExpedicaoUF_COD: TLongintField
+      FieldKind = fkData
+      FieldName = 'UF_COD'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qryExpedicaoUF_REDUZIDO: TStringField
+      FieldKind = fkData
+      FieldName = 'UF_REDUZIDO'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+  end
+  object dsExpedicao: TDataSource
+    DataSet = qryExpedicao
+    left = 1000
+    top = 231
+  end
+  object qryHistoricoEndereco: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'ID_ENDERECO_HISTORICO'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'ENT_COD'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'DATA_LANCAMENTO'
+        DataType = ftDateTime
+        Precision = -1
+      end    
+      item
+        Name = 'CEP'
+        DataType = ftString
+        Precision = -1
+        Size = 8
+      end    
+      item
+        Name = 'CIDADE'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'COMPLEMENTO'
+        DataType = ftString
+        Precision = -1
+        Size = 60
+      end    
+      item
+        Name = 'BAIRRO'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end    
+      item
+        Name = 'LOGRADOURO'
+        DataType = ftString
+        Precision = -1
+        Size = 60
+      end    
+      item
+        Name = 'NUMERO'
+        DataType = ftString
+        Precision = -1
+        Size = 10
+      end    
+      item
+        Name = 'ZONA'
+        DataType = ftString
+        Precision = -1
+        Size = 20
+      end    
+      item
+        Name = 'UF'
+        DataType = ftString
+        Precision = -1
+        Size = 2
+      end>
+    OnNewRecord = qryHistoricoEnderecoNewRecord
+    Database = DM.sqlConectorDM
+    Transaction = DM.sqlTransactionDM
+    SQL.Strings = (
+      'select'
+      'eh.id_endereco_historico, eh.ent_cod, eh.data_lancamento,'
+      'eh.cep, eh.cidade, eh.complemento, eh.bairro, eh.logradouro, eh.numero,'
+      'eh.zona, eh.uf'
+      'from endereco_historico eh'
+      'where eh.ent_cod = :entcod'
+    )
+    Params = <    
+      item
+        DataType = ftInteger
+        Name = 'entcod'
+        ParamType = ptInput
+      end>
+    left = 917
+    top = 332
+    object qryHistoricoEnderecoID_ENDERECO_HISTORICO: TLongintField
+      DisplayLabel = 'ID '
+      DisplayWidth = 3
+      FieldKind = fkData
+      FieldName = 'ID_ENDERECO_HISTORICO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      ReadOnly = False
+      Required = True
+    end
+    object qryHistoricoEnderecoENT_COD: TLongintField
+      FieldKind = fkData
+      FieldName = 'ENT_COD'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryHistoricoEnderecoDATA_LANCAMENTO: TDateTimeField
+      DisplayLabel = 'DATA DE LANÇAMENTO'
+      DisplayWidth = 7
+      FieldKind = fkData
+      FieldName = 'DATA_LANCAMENTO'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryHistoricoEnderecoCEP: TStringField
+      FieldKind = fkData
+      FieldName = 'CEP'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 8
+    end
+    object qryHistoricoEnderecoUF: TStringField
+      FieldKind = fkData
+      FieldName = 'UF'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 2
+    end
+    object qryHistoricoEnderecoCIDADE: TStringField
+      DisplayWidth = 20
+      FieldKind = fkData
+      FieldName = 'CIDADE'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object qryHistoricoEnderecoBAIRRO: TStringField
+      DisplayWidth = 20
+      FieldKind = fkData
+      FieldName = 'BAIRRO'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+    object qryHistoricoEnderecoLOGRADOURO: TStringField
+      DisplayWidth = 20
+      FieldKind = fkData
+      FieldName = 'LOGRADOURO'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object qryHistoricoEnderecoNUMERO: TStringField
+      DisplayWidth = 4
+      FieldKind = fkData
+      FieldName = 'NUMERO'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 10
+    end
+    object qryHistoricoEnderecoCOMPLEMENTO: TStringField
+      DisplayWidth = 20
+      FieldKind = fkData
+      FieldName = 'COMPLEMENTO'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object qryHistoricoEnderecoZONA: TStringField
+      DisplayWidth = 5
+      FieldKind = fkData
+      FieldName = 'ZONA'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object dsHistoricoEndereco: TDataSource
+    DataSet = qryHistoricoEndereco
+    left = 917
+    top = 379
+  end
+  object qryFilial: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'PAR_FANTASIA'
+        DataType = ftString
+        Precision = -1
+        Size = 40
+      end    
+      item
+        Name = 'PAR_COD'
+        DataType = ftInteger
+        Precision = -1
+      end>
+    Database = DM.sqlConectorDM
+    Transaction = DM.sqlTransactionDM
+    SQL.Strings = (
+      'select'
+      'par.par_fantasia, par.par_cod'
+      'from parametros par'
+    )
+    Params = <>
+    left = 312
+    top = 504
+    object qryFilialPAR_FANTASIA: TStringField
+      FieldKind = fkData
+      FieldName = 'PAR_FANTASIA'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object qryFilialPAR_COD: TLongintField
+      FieldKind = fkData
+      FieldName = 'PAR_COD'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+  end
+  object dsFilial: TDataSource
+    DataSet = qryFilial
+    left = 312
+    top = 568
+  end
+  object OpenPictureDialog1: TOpenPictureDialog
+    Options = [ofAllowMultiSelect, ofEnableSizing, ofViewDetail]
+    left = 872
+    top = 249
+  end
+  object dsDependentes: TDataSource
+    DataSet = qryDependentes
+    left = 136
+    top = 596
+  end
+  object qryDependentes: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'ID_DEPENDENTE'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'NOME_DEPENDENTE'
+        DataType = ftString
+        Precision = -1
+        Size = 60
+      end    
+      item
+        Name = 'ENT_COD'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'DATA_NASCIMENTO'
+        DataType = ftDate
+        Precision = -1
+      end    
+      item
+        Name = 'GRAU_PARENTESCO'
+        DataType = ftString
+        Precision = -1
+        Size = 30
+      end>
+    Database = DM.sqlConectorDM
+    Transaction = DM.sqlTransactionDM
+    SQL.Strings = (
+      'select'
+      'dep.id_dependente, dep.nome_dependente, dep.ent_cod, dep.data_nascimento, dep.grau_parentesco'
+      'from dependentes dep'
+      'where dep.ent_cod = :idcod'
+    )
+    InsertSQL.Strings = (
+      ''
+    )
+    UpdateSQL.Strings = (
+      ''
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'idcod'
+        ParamType = ptInput
+      end>
+    left = 136
+    top = 536
+    object qryDependentesID_DEPENDENTE: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_DEPENDENTE'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object qryDependentesNOME_DEPENDENTE: TStringField
+      DisplayLabel = 'NOME'
+      FieldKind = fkData
+      FieldName = 'NOME_DEPENDENTE'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object qryDependentesENT_COD: TLongintField
+      FieldKind = fkData
+      FieldName = 'ENT_COD'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Visible = False
+    end
+    object qryDependentesDATA_NASCIMENTO: TDateField
+      DisplayLabel = 'DATA DE NASCIMENTO'
+      FieldKind = fkData
+      FieldName = 'DATA_NASCIMENTO'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryDependentesGRAU_PARENTESCO: TStringField
+      DisplayLabel = 'GRAU DE PARENTESCO'
+      FieldKind = fkData
+      FieldName = 'GRAU_PARENTESCO'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 30
+    end
+  end
+  object qryFoto: TSQLQuery
+    FieldDefs = <    
+      item
+        Name = 'ID_FOTO'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'ENT_COD'
+        DataType = ftInteger
+        Precision = -1
+      end    
+      item
+        Name = 'FOTOS'
+        DataType = ftBlob
+        Precision = -1
+        Size = 8
+      end>
+    Database = DM.sqlConectorDM
+    Transaction = DM.sqlTransactionDM
+    SQL.Strings = (
+      'select fotos.id_foto,'
+      '       fotos.ent_cod,'
+      '       fotos.fotos'
+      'from fotos'
+      'where fotos.ent_cod = coalesce(:ent_cod,0)'
+    )
+    InsertSQL.Strings = (
+      ''
+    )
+    UpdateSQL.Strings = (
+      ''
+    )
+    DeleteSQL.Strings = (
+      'delete from fotos'
+      'where fotos.id_foto = coalesce(:id_foto,0)'
+    )
+    RefreshSQL.Strings = (
+      ''
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'ent_cod'
+        ParamType = ptInput
+      end>
+    left = 50
+    top = 536
+    object qryFotoID_FOTO: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID_FOTO'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryFotoFOTOS: TBlobField
+      FieldKind = fkData
+      FieldName = 'FOTOS'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 8
+    end
+    object qryFotoENT_COD: TLongintField
+      FieldKind = fkData
+      FieldName = 'ENT_COD'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object dsFoto: TDataSource
+    DataSet = qryFoto
+    left = 48
+    top = 596
+  end
+end
